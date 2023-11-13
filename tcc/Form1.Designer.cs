@@ -73,6 +73,7 @@ namespace tcc
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
             this.txtEmail.TabIndex = 11;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
+            this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // btnLogin
             // 

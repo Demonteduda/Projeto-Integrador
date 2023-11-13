@@ -65,6 +65,8 @@ namespace tcc
             this.cmbPagamento.Name = "cmbPagamento";
             this.cmbPagamento.Size = new System.Drawing.Size(121, 21);
             this.cmbPagamento.TabIndex = 8;
+            this.cmbPagamento.SelectedIndexChanged += new System.EventHandler(this.cmbPagamento_SelectedIndexChanged);
+            this.cmbPagamento.Click += new System.EventHandler(this.cmbPagamento_Click);
             // 
             // txtCod
             // 
@@ -74,6 +76,7 @@ namespace tcc
             this.txtCod.Size = new System.Drawing.Size(270, 20);
             this.txtCod.TabIndex = 10;
             this.txtCod.Click += new System.EventHandler(this.txtCod_Click);
+            this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
             // 
             // label1
             // 

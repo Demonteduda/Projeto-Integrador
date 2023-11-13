@@ -84,5 +84,10 @@ namespace tcc
         {
 
         }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            //txtSenha.Select();
+        }
     }
 }

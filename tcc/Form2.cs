@@ -44,7 +44,6 @@ namespace tcc
 
         private void txtValor_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(txtCod.Text + " - R$" + txtValor.Text);
             
         }
 
@@ -57,10 +56,25 @@ namespace tcc
         {
             if (cmbPagamento.SelectedIndex==0)
             {
-                pagamento pg = new pagamento();
+                pagamento pg = new pagamento(txtValor.Text);
                 pg.Show();
             }
             listBox1.Items.Clear();
+        }
+
+        private void cmbPagamento_Click(object sender, EventArgs e)
+        {
+            listBox1.Items.Add("Código: " + txtCod.Text + " - R$" + txtValor.Text);
+        }
+
+        private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCod_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

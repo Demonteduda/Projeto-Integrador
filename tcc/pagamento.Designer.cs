@@ -61,10 +61,12 @@ namespace tcc
             this.label1.Size = new System.Drawing.Size(298, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Finalização do Pagamento";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(269, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 13);
@@ -113,6 +115,7 @@ namespace tcc
             this.txtValorEntregue.Name = "txtValorEntregue";
             this.txtValorEntregue.Size = new System.Drawing.Size(100, 20);
             this.txtValorEntregue.TabIndex = 7;
+            this.txtValorEntregue.Enter += new System.EventHandler(this.txtValorEntregue_Enter);
             // 
             // txtTroco
             // 
@@ -120,6 +123,7 @@ namespace tcc
             this.txtTroco.Name = "txtTroco";
             this.txtTroco.Size = new System.Drawing.Size(100, 20);
             this.txtTroco.TabIndex = 8;
+            this.txtTroco.Click += new System.EventHandler(this.txtTroco_Click);
             // 
             // pagamento
             // 

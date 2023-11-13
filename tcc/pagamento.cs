@@ -13,9 +13,10 @@ namespace tcc
     public partial class pagamento : Form
     {
        
-        public pagamento()
+        public pagamento(string valor)
         {
             InitializeComponent();
+            txtTotalPago.Text = valor;
         }
 
         private void txtTotalPago_TextChanged(object sender, EventArgs e)
@@ -28,6 +29,22 @@ namespace tcc
         {
             Form2 f2 = new Form2();
             f2.Show();
+        }
+
+        private void txtValorEntregue_Enter(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void txtTroco_Click(object sender, EventArgs e)
+        {
+            double troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
+            txtTroco.Text = ("R$"+troco);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
