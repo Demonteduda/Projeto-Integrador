@@ -46,7 +46,7 @@ namespace tcc
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+           
             Usuario lg = new Usuario(txtEmail.Text,txtSenha.Text);
             Console.WriteLine(txtEmail.Text);
             Console.WriteLine(txtSenha.Text);
@@ -58,16 +58,21 @@ namespace tcc
             }
             if (existe)
             {
-                
                 Form2 f2 = new Form2();
                 f2.Show();
+                Form1 f1 = new Form1();
+                f1.Close();
                 Console.WriteLine("Cadastrado");
+
             }
             else
             {
                 MessageBox.Show("Erro!!");
             }
             DAO_Conexao.con.Close();
+
+           
+
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -88,6 +93,11 @@ namespace tcc
         private void txtEmail_Enter(object sender, EventArgs e)
         {
             //txtSenha.Select();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

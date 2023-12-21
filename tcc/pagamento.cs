@@ -38,13 +38,28 @@ namespace tcc
 
         private void txtTroco_Click(object sender, EventArgs e)
         {
-            double troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
-            txtTroco.Text = ("R$"+troco);
+            /*double troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
+            txtTroco.Text = ("R$"+troco);*/
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTroco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorEntregue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar==13)
+            {
+                double troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
+                txtTroco.Text = ("R$" + troco);
+            }
+           
         }
     }
 }

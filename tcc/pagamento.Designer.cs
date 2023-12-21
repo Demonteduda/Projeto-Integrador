@@ -116,6 +116,7 @@ namespace tcc
             this.txtValorEntregue.Size = new System.Drawing.Size(100, 20);
             this.txtValorEntregue.TabIndex = 7;
             this.txtValorEntregue.Enter += new System.EventHandler(this.txtValorEntregue_Enter);
+            this.txtValorEntregue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorEntregue_KeyPress);
             // 
             // txtTroco
             // 
@@ -124,6 +125,7 @@ namespace tcc
             this.txtTroco.Size = new System.Drawing.Size(100, 20);
             this.txtTroco.TabIndex = 8;
             this.txtTroco.Click += new System.EventHandler(this.txtTroco_Click);
+            this.txtTroco.TextChanged += new System.EventHandler(this.txtTroco_TextChanged);
             // 
             // pagamento
             // 
