@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,7 +65,7 @@ namespace tcc
                 pagamento pg = new pagamento(txtValor.Text);
                 pg.Show();
             }
-            listBox1.Items.Clear();
+            lbProdutos.Items.Clear();
         }
 
         private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace tcc
 
         private void txtCod_TextChanged(object sender, EventArgs e)
         {
-
+            int cod = int.Parse(txtCod.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -93,8 +94,23 @@ namespace tcc
         {
             if(e.KeyChar==13)
             {
-                listBox1.Items.Add("Código: " + txtCod.Text + " - R$" + txtValor.Text);
+                lbProdutos.Items.Add("Código: " + txtCod.Text + " - R$" + txtValor.Text);
             }
+        }
+
+        private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+            produtos prod = null;
+            DAO_Conexao.con.Close();
+            prod = new produtos();
+            MySqlDataReader re = prod.consultarProduto();
+            while (re.Read())
+            {
+                lbProdutos.Items.Add(re);
+            }
+
+            
         }
     }
 }

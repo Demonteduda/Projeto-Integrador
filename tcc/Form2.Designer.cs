@@ -29,7 +29,7 @@ namespace tcc
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbProdutos = new System.Windows.Forms.ListBox();
             this.cmbPagamento = new System.Windows.Forms.ComboBox();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,15 +44,15 @@ namespace tcc
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lbProdutos
             // 
-            this.listBox1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(386, 26);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(314, 225);
-            this.listBox1.TabIndex = 7;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.lbProdutos.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.lbProdutos.FormattingEnabled = true;
+            this.lbProdutos.Location = new System.Drawing.Point(386, 26);
+            this.lbProdutos.Name = "lbProdutos";
+            this.lbProdutos.Size = new System.Drawing.Size(314, 225);
+            this.lbProdutos.TabIndex = 7;
+            this.lbProdutos.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // cmbPagamento
             // 
@@ -78,6 +78,7 @@ namespace tcc
             this.txtCod.TabIndex = 10;
             this.txtCod.Click += new System.EventHandler(this.txtCod_Click);
             this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
+            this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             // 
             // label1
             // 
@@ -179,7 +180,7 @@ namespace tcc
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbPagamento);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lbProdutos);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -193,7 +194,7 @@ namespace tcc
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbProdutos;
         private System.Windows.Forms.ComboBox cmbPagamento;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtCod;
