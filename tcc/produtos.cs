@@ -31,7 +31,7 @@ namespace tcc
         }
 
 
-        public MySqlDataReader consultarProduto()
+        public MySqlDataReader consultarProduto(int cod)
         {
             MySqlDataReader consul = null;
 

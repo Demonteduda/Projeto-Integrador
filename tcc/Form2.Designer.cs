@@ -40,6 +40,7 @@ namespace tcc
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +79,7 @@ namespace tcc
             this.txtCod.TabIndex = 10;
             this.txtCod.Click += new System.EventHandler(this.txtCod_Click);
             this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
+            this.txtCod.Enter += new System.EventHandler(this.txtCod_Enter);
             this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             // 
             // label1
@@ -115,9 +117,9 @@ namespace tcc
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.Location = new System.Drawing.Point(386, 358);
+            this.button1.Location = new System.Drawing.Point(315, 394);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 45);
+            this.button1.Size = new System.Drawing.Size(124, 45);
             this.button1.TabIndex = 14;
             this.button1.Text = "Efetuar pagamento";
             this.button1.UseVisualStyleBackColor = false;
@@ -166,11 +168,23 @@ namespace tcc
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button4.Location = new System.Drawing.Point(386, 330);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Apagar";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -204,5 +218,6 @@ namespace tcc
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
     }
 }

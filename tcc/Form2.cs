@@ -88,6 +88,15 @@ namespace tcc
         {
             consulta cs = new consulta();
             cs.Show();
+            produtos prod = null;
+            DAO_Conexao.con.Close();
+            prod = new produtos();
+            MySqlDataReader re = prod.consultarProduto(int.Parse(txtCod.Text));
+            while (re.Read())
+            {
+                lbProdutos.Items.Add(re);
+            }
+
         }
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
@@ -101,16 +110,19 @@ namespace tcc
         private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
         {
             
-            produtos prod = null;
-            DAO_Conexao.con.Close();
-            prod = new produtos();
-            MySqlDataReader re = prod.consultarProduto();
-            while (re.Read())
-            {
-                lbProdutos.Items.Add(re);
-            }
-
+           
             
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            lbProdutos.Items.Clear();
+        }
+
+        private void txtCod_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
