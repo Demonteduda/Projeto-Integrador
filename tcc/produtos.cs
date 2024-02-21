@@ -31,6 +31,25 @@ namespace tcc
         }
 
 
+        public MySqlDataReader consultarPreco(int cod)
+        {
+            MySqlDataReader consul = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT preco FROM SyProduto WHERE codigo = '" + cod + "'", DAO_Conexao.con);
+                Console.WriteLine("SELECT preco FROM SyProduto WHERE codigo = '" + cod + "'");
+                consul = consulta.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            return consul;
+        }
+
         public MySqlDataReader consultarProduto(int cod)
         {
             MySqlDataReader consul = null;

@@ -38,6 +38,7 @@ namespace tcc
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "consulta";
             this.Text = "consulta";
+            this.Load += new System.EventHandler(this.consulta_Load);
             this.ResumeLayout(false);
 
         }

@@ -64,9 +64,9 @@ namespace tcc
             "Crédito",
             "Debito",
             "Alimentação"});
-            this.cmbPagamento.Location = new System.Drawing.Point(579, 330);
+            this.cmbPagamento.Location = new System.Drawing.Point(533, 330);
             this.cmbPagamento.Name = "cmbPagamento";
-            this.cmbPagamento.Size = new System.Drawing.Size(121, 21);
+            this.cmbPagamento.Size = new System.Drawing.Size(167, 21);
             this.cmbPagamento.TabIndex = 8;
             this.cmbPagamento.SelectedIndexChanged += new System.EventHandler(this.cmbPagamento_SelectedIndexChanged);
             // 
@@ -117,7 +117,7 @@ namespace tcc
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.Location = new System.Drawing.Point(315, 394);
+            this.button1.Location = new System.Drawing.Point(364, 394);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 45);
             this.button1.TabIndex = 14;
@@ -130,7 +130,7 @@ namespace tcc
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox1.BackgroundImage = global::tcc.Properties.Resources.s__3_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 368);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 394);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(71, 70);
             this.pictureBox1.TabIndex = 9;
@@ -142,9 +142,10 @@ namespace tcc
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(-4, -2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(730, 461);
+            this.pictureBox2.Size = new System.Drawing.Size(757, 489);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // button2
             // 
@@ -183,7 +184,7 @@ namespace tcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1285, 694);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

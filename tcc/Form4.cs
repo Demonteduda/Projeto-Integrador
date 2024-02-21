@@ -16,5 +16,10 @@ namespace tcc
         {
             InitializeComponent();
         }
+
+        private void consulta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

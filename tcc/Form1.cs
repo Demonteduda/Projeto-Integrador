@@ -22,6 +22,7 @@ namespace tcc
             else
                Console.WriteLine("Erro de conexão");
 
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -46,8 +47,12 @@ namespace tcc
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-           
-            Usuario lg = new Usuario(txtEmail.Text,txtSenha.Text);
+            Form2 f2 = new Form2();
+                f2.Show();
+                Form1 f1 = new Form1();
+                f1.Close();
+                Console.WriteLine("Cadastrado");
+           /* Usuario lg = new Usuario(txtEmail.Text,txtSenha.Text);
             Console.WriteLine(txtEmail.Text);
             Console.WriteLine(txtSenha.Text);
             MySqlDataReader re = lg.verificaLogin();
@@ -58,11 +63,7 @@ namespace tcc
             }
             if (existe)
             {
-                Form2 f2 = new Form2();
-                f2.Show();
-                Form1 f1 = new Form1();
-                f1.Close();
-                Console.WriteLine("Cadastrado");
+               
 
             }
             else
@@ -71,7 +72,7 @@ namespace tcc
             }
             DAO_Conexao.con.Close();
 
-           
+           */
 
         }
 

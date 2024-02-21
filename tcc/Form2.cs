@@ -13,14 +13,25 @@ namespace tcc
 {
     public partial class Form2 : Form
     {
-        public int total;
+        public float total;
+        public string valor;
+        public string nome1;
+       
         public Form2()
         {
             InitializeComponent();
-           
-            
+
+            txtValor.Enabled = false;
+            //initializeFullscreenImage();
+
         }
 
+       /* private void initializeFullscreenImage()
+        {
+           pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+       
+        }
+       */
         private void Form2_Load(object sender, EventArgs e)
         {
             button1.Font = new Font("Cambria", 10, FontStyle.Bold);
@@ -75,7 +86,6 @@ namespace tcc
 
         private void txtCod_TextChanged(object sender, EventArgs e)
         {
-            int cod = int.Parse(txtCod.Text);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -91,38 +101,54 @@ namespace tcc
             produtos prod = null;
             DAO_Conexao.con.Close();
             prod = new produtos();
-            MySqlDataReader re = prod.consultarProduto(int.Parse(txtCod.Text));
-            while (re.Read())
-            {
-                lbProdutos.Items.Add(re);
-            }
 
+        
         }
 
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar==13)
-            {
-                lbProdutos.Items.Add("Código: " + txtCod.Text + " - R$" + txtValor.Text);
-            }
+           
         }
 
         private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (e.KeyChar == 13)
+            {
+                produtos p1 = new produtos();
+                MySqlDataReader r = p1.consultarProduto(int.Parse(txtCod.Text));
+                while (r.Read())
+                {
+                    valor = r["preco"].ToString();
+                    nome1 = r["nome"].ToString();
+                }
+                DAO_Conexao.con.Close();
+                lbProdutos.Items.Add("Código: " + txtCod.Text + ", Nome:"+ nome1 +" - R$" + valor);
+                total += float.Parse(valor);
+                txtValor.Text = total.ToString();
+            }
             
-           
-            
-            
+         
+
+              //  p1.consultarPreco(int.Parse( txtCod.Text)) ;
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             lbProdutos.Items.Clear();
+            txtValor.Text = "";
+            txtCod.Text="";
+            total = 0;
         }
 
         private void txtCod_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+           
         }
     }
 }
