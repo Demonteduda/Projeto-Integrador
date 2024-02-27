@@ -22,10 +22,9 @@ namespace tcc
             else
                Console.WriteLine("Erro de conexão");
 
-
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+            private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }

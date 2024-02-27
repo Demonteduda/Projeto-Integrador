@@ -41,7 +41,7 @@ namespace tcc
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(47, 51);
+            this.lblNome.Location = new System.Drawing.Point(26, 29);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(38, 13);
             this.lblNome.TabIndex = 0;

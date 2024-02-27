@@ -26,19 +26,19 @@ namespace tcc
 
         }
 
-       /* private void initializeFullscreenImage()
-        {
-           pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-       
-        }
-       */
+        /* private void initializeFullscreenImage()
+         {
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+         }
+        */
         private void Form2_Load(object sender, EventArgs e)
         {
+            txtCod.Select();
+
             button1.Font = new Font("Cambria", 10, FontStyle.Bold);
             button2.Font = new Font("Cambria", 9, FontStyle.Bold);
             button3.Font = new Font("Cambria", 8, FontStyle.Bold);
-
-           
 
 
         }
@@ -108,6 +108,7 @@ namespace tcc
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
            
+
         }
 
         private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
@@ -121,10 +122,19 @@ namespace tcc
                     valor = r["preco"].ToString();
                     nome1 = r["nome"].ToString();
                 }
-                DAO_Conexao.con.Close();
-                lbProdutos.Items.Add("Código: " + txtCod.Text + ", Nome:"+ nome1 +" - R$" + valor);
-                total += float.Parse(valor);
-                txtValor.Text = total.ToString();
+                DAO_Conexao.con.Close();          
+                try
+                {
+                    lbProdutos.Items.Add("Código: " + txtCod.Text + ", Nome:" + nome1 + " - R$" + valor);
+                    total += float.Parse(valor);
+                    txtValor.Text = total.ToString();
+                    txtCod.Text = "";
+                }
+                catch(Exception ex)
+                {
+                    lbProdutos.Items.Clear();
+                    MessageBox.Show("Produto não cadastrado");
+                }
             }
             
          
@@ -135,10 +145,20 @@ namespace tcc
 
         private void button4_Click(object sender, EventArgs e)
         {
-            lbProdutos.Items.Clear();
-            txtValor.Text = "";
-            txtCod.Text="";
-            total = 0;
+            txtCod.Select();
+            if (lbProdutos.Items.Count < 0)
+            {
+                MessageBox.Show("O ListBox está vazio.");
+               
+            }
+            else
+            {
+                lbProdutos.Items.Clear();
+                txtValor.Text = "";
+                txtCod.Text = "";
+                total = 0;
+            }
+            
         }
 
         private void txtCod_Enter(object sender, EventArgs e)
@@ -149,6 +169,21 @@ namespace tcc
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
            
+        }
+
+        private void cmbPagamento_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                // Abrir o ComboBox
+                cmbPagamento.DroppedDown = true;
+                cmbPagamento.SelectedIndex = 0;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
