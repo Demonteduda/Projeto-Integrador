@@ -183,7 +183,11 @@ namespace tcc
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+            if(lbProdutos.SelectedIndex != -1)
+            {
+                lbProdutos.Items.RemoveAt(lbProdutos.SelectedIndex);
+            }
+            txtCod.Select();
         }
     }
 }
