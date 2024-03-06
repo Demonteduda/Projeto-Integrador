@@ -12,6 +12,7 @@ namespace tcc
         String nome;
         float preco;
         int cod;
+        int qtd;
 
         public produtos()
         {
@@ -23,12 +24,33 @@ namespace tcc
             this.cod = cod;
         }
 
-        public produtos(string nome, float preco, int cod)
+        public produtos(string nome, float preco, int cod, int qtd)
         {
             this.nome = nome;
             this.preco = preco;
             this.cod = cod;
+            this.qtd = qtd;
         }
+
+        public MySqlDataReader cadastrarProduto(int cod1, string nome1, float preco1, int qtd1)
+        {
+            MySqlDataReader cad = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand insere = new MySqlCommand("insert into SyProduto (codigo, nome, preco, quantidade) values " +
+                 "('" + cod1 + "','" + nome1 + "','" + preco1 + "','" + qtd1 + "')", DAO_Conexao.con);
+                cad = insere.ExecuteReader();
+            }
+
+            catch (Exception ex1)
+            {
+                Console.WriteLine(ex1.ToString());
+            }
+            return cad;
+        }
+
 
 
         public MySqlDataReader consultarPreco(int cod)

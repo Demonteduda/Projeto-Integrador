@@ -29,84 +29,108 @@ namespace tcc
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNome = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblCod = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblPreco = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtdescricao = new System.Windows.Forms.TextBox();
+            this.txtpreco = new System.Windows.Forms.TextBox();
+            this.txtqtd = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnAtualizar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblNome
+            // txtCodigo
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(26, 29);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
+            this.txtCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(165, 174);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(149, 23);
+            this.txtCodigo.TabIndex = 0;
             // 
-            // textBox1
+            // txtdescricao
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 48);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtdescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdescricao.Location = new System.Drawing.Point(165, 224);
+            this.txtdescricao.Name = "txtdescricao";
+            this.txtdescricao.Size = new System.Drawing.Size(149, 23);
+            this.txtdescricao.TabIndex = 1;
             // 
-            // lblCod
+            // txtpreco
             // 
-            this.lblCod.AutoSize = true;
-            this.lblCod.Location = new System.Drawing.Point(47, 98);
-            this.lblCod.Name = "lblCod";
-            this.lblCod.Size = new System.Drawing.Size(43, 13);
-            this.lblCod.TabIndex = 2;
-            this.lblCod.Text = "Codigo:";
+            this.txtpreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpreco.Location = new System.Drawing.Point(165, 269);
+            this.txtpreco.Name = "txtpreco";
+            this.txtpreco.Size = new System.Drawing.Size(149, 23);
+            this.txtpreco.TabIndex = 2;
             // 
-            // textBox2
+            // txtqtd
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 99);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtqtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqtd.Location = new System.Drawing.Point(165, 322);
+            this.txtqtd.Name = "txtqtd";
+            this.txtqtd.Size = new System.Drawing.Size(149, 23);
+            this.txtqtd.TabIndex = 3;
             // 
-            // lblPreco
+            // btnCadastrar
             // 
-            this.lblPreco.AutoSize = true;
-            this.lblPreco.Location = new System.Drawing.Point(47, 169);
-            this.lblPreco.Name = "lblPreco";
-            this.lblPreco.Size = new System.Drawing.Size(38, 13);
-            this.lblPreco.TabIndex = 4;
-            this.lblPreco.Text = "Preço:";
+            this.btnCadastrar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCadastrar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(283, 406);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(123, 41);
+            this.btnCadastrar.TabIndex = 4;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
             // 
-            // textBox3
+            // btnConsultar
             // 
-            this.textBox3.Location = new System.Drawing.Point(110, 169);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
+            this.btnConsultar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultar.Location = new System.Drawing.Point(425, 406);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(123, 41);
+            this.btnConsultar.TabIndex = 5;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = false;
             // 
-            // btnSalvar
+            // btnAtualizar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(259, 167);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvar.TabIndex = 6;
-            this.btnSalvar.Text = "Salvar";
-            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAtualizar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.Location = new System.Drawing.Point(569, 406);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(123, 41);
+            this.btnAtualizar.TabIndex = 6;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = false;
+            // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(713, 406);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(123, 41);
+            this.btnSair.TabIndex = 7;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
             // 
             // cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnSalvar);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.lblPreco);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.lblCod);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblNome);
+            this.BackgroundImage = global::tcc.Properties.Resources._12;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(866, 488);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnAtualizar);
+            this.Controls.Add(this.btnConsultar);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.txtqtd);
+            this.Controls.Add(this.txtpreco);
+            this.Controls.Add(this.txtdescricao);
+            this.Controls.Add(this.txtCodigo);
+            this.DoubleBuffered = true;
             this.Name = "cadastro";
             this.Text = "cadastro";
             this.ResumeLayout(false);
@@ -116,12 +140,13 @@ namespace tcc
 
         #endregion
 
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblCod;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label lblPreco;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtdescricao;
+        private System.Windows.Forms.TextBox txtpreco;
+        private System.Windows.Forms.TextBox txtqtd;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.Button btnSair;
     }
 }
