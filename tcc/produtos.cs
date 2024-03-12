@@ -48,6 +48,10 @@ namespace tcc
             {
                 Console.WriteLine(ex1.ToString());
             }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
             return cad;
         }
 

@@ -48,8 +48,10 @@ namespace tcc
         {
             Form2 f2 = new Form2();
                 f2.Show();
-                Form1 f1 = new Form1();
-                f1.Close();
+            this.Hide();
+
+                /*Form1 f1 = new Form1();
+                f1.Close();*/
                 Console.WriteLine("Cadastrado");
            /* Usuario lg = new Usuario(txtEmail.Text,txtSenha.Text);
             Console.WriteLine(txtEmail.Text);

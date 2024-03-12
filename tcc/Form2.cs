@@ -24,6 +24,7 @@ namespace tcc
             txtValor.Enabled = false;
             //initializeFullscreenImage();
 
+         
         }
 
         /* private void initializeFullscreenImage()
@@ -75,8 +76,10 @@ namespace tcc
             {
                 pagamento pg = new pagamento(txtValor.Text);
                 pg.Show();
+                this.Close();
             }
             lbProdutos.Items.Clear();
+
         }
 
         private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -92,6 +95,8 @@ namespace tcc
         {
             cadastro cd = new cadastro();
             cd.Show();
+            this.Close();
+
         }
 
         private void button3_Click(object sender, EventArgs e)

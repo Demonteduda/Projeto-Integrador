@@ -29,6 +29,7 @@ namespace tcc
         {
             Form2 f2 = new Form2();
             f2.Show();
+            this.Close();
         }
 
         private void txtValorEntregue_Enter(object sender, EventArgs e)

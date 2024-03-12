@@ -77,8 +77,8 @@ namespace tcc
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLogin.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.btnLogin.Location = new System.Drawing.Point(59, 293);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(133, 37);
