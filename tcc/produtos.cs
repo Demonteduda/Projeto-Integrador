@@ -109,7 +109,7 @@ namespace tcc
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT preco FROM SyProduto ", DAO_Conexao.con);
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM SyProduto ", DAO_Conexao.con);
                 Console.WriteLine("SELECT preco FROM SyProduto WHERE codigo");
                 consul = consulta.ExecuteReader();
             }

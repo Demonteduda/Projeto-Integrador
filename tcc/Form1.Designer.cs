@@ -34,10 +34,8 @@ namespace tcc
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,52 +44,43 @@ namespace tcc
             this.panel1.Controls.Add(this.txtSenha);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.btnLogin);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(702, 426);
+            this.panel1.Size = new System.Drawing.Size(805, 469);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(43, 267);
+            this.txtSenha.Location = new System.Drawing.Point(43, 262);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(149, 20);
+            this.txtSenha.Size = new System.Drawing.Size(198, 20);
             this.txtSenha.TabIndex = 12;
             this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(43, 183);
+            this.txtEmail.Location = new System.Drawing.Point(43, 191);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(149, 20);
+            this.txtEmail.Size = new System.Drawing.Size(198, 20);
             this.txtEmail.TabIndex = 11;
             this.txtEmail.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.Control;
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.btnLogin.Location = new System.Drawing.Point(43, 321);
+            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.MintCream;
+            this.btnLogin.Location = new System.Drawing.Point(57, 316);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(133, 37);
+            this.btnLogin.Size = new System.Drawing.Size(161, 46);
             this.btnLogin.TabIndex = 10;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(616, 321);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(113, 111);
-            this.pictureBox2.TabIndex = 6;
-            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -100,9 +89,9 @@ namespace tcc
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(748, 473);
+            this.pictureBox1.Size = new System.Drawing.Size(768, 454);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
@@ -119,7 +108,6 @@ namespace tcc
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -128,7 +116,6 @@ namespace tcc
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.TextBox txtEmail;

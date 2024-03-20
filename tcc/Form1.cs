@@ -16,6 +16,7 @@ namespace tcc
         public Form1()
         {
             InitializeComponent();
+           // btnLogin.FlatStyle = FlatStyle.Flat;
 
             if (DAO_Conexao.getConexao("143.106.241.3", "cl202203", "cl202203", "cl*25042007"))
                Console.WriteLine("Conectado");
@@ -24,7 +25,23 @@ namespace tcc
 
         }
 
-            private void pictureBox2_Click(object sender, EventArgs e)
+        public class CirculatTextBox : TextBox
+        {
+        
+            protected override void 
+             OnPaint(PaintEventArgs e)
+            {
+                base.OnPaint(e);
+
+                Graphics graphics = e.Graphics;
+                Pen pen = new Pen(Color.Black,2);
+                graphics.DrawEllipse(pen, 0, 0, Width - 1, Height - 1);
+            }
+
+        }
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
