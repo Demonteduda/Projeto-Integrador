@@ -29,13 +29,23 @@ namespace tcc
         /// </summary>
         private void InitializeComponent()
         {
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(799, 446);
+            this.listBox1.TabIndex = 0;
             // 
             // consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Name = "consulta";
             this.Text = "consulta";
             this.Load += new System.EventHandler(this.consulta_Load);
@@ -44,5 +54,7 @@ namespace tcc
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

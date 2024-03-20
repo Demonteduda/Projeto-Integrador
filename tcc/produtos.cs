@@ -55,17 +55,62 @@ namespace tcc
             return cad;
         }
 
+        public int verificaCadastro(int codi)
+        {
+           int cont = 0;
 
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand verifica = new MySqlCommand("Select count(*) from  SyProduto where codigo=" + codi, DAO_Conexao.con);
+                cont = Convert.ToInt32(verifica.ExecuteScalar());
+            }
 
-        public MySqlDataReader consultarPreco(int cod)
+            catch (Exception ex1)
+            {
+                Console.WriteLine(ex1.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return cont;
+
+        }
+
+        public bool atualizarProduto(int cod2, string nome2, float preco2, int qtd2)
+        {
+            bool atu= false;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand insere = new MySqlCommand("update SyProduto set nome ='"+nome2+"', preco='"+preco2+"'," +
+                    " quantidade ='"+qtd2+"'  where codigo ="+cod2, DAO_Conexao.con);
+               insere.ExecuteNonQuery();
+                atu = true;
+            }
+
+            catch (Exception ex1)
+            {
+                Console.WriteLine(ex1.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+            return atu;
+        }
+
+        public MySqlDataReader consultarProdutos()
         {
             MySqlDataReader consul = null;
 
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT preco FROM SyProduto WHERE codigo = '" + cod + "'", DAO_Conexao.con);
-                Console.WriteLine("SELECT preco FROM SyProduto WHERE codigo = '" + cod + "'");
+                MySqlCommand consulta = new MySqlCommand("SELECT preco FROM SyProduto ", DAO_Conexao.con);
+                Console.WriteLine("SELECT preco FROM SyProduto WHERE codigo");
                 consul = consulta.ExecuteReader();
             }
             catch (Exception ex)
@@ -75,6 +120,8 @@ namespace tcc
 
             return consul;
         }
+
+
 
         public MySqlDataReader consultarProduto(int cod)
         {

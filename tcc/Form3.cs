@@ -30,24 +30,77 @@ namespace tcc
            
             try
             {
-                DAO_Conexao.con.Open();
-                produtos p1 = new produtos();
-                MySqlDataReader r = p1.cadastrarProduto(int.Parse(txtCodigo.Text), txtdescricao.Text, float.Parse(txtpreco.Text), int.Parse(txtqtd.Text));
+               produtos p1 = new produtos();
+                if (p1.verificaCadastro(int.Parse(txtCodigo.Text))==0)
+                {
+
+                    p1.cadastrarProduto(int.Parse(txtCodigo.Text), txtdescricao.Text, float.Parse(txtpreco.Text), int.Parse(txtqtd.Text));
+                    MessageBox.Show("Produto Cadastrado!");
+                }
+                else
+                    MessageBox.Show("Um produto com esse código já está Cadastrado");
+            }
+           
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao preencher");
+            }
+            finally
+            {
                 DAO_Conexao.con.Close();
+            }
+
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                produtos p2 = new produtos();
+
+                MySqlDataReader r = p2.consultarProduto(int.Parse(txtCodigo.Text));
+
 
                 while (r.Read())
                 {
-
                     txtCodigo.Text = (r["codigo"].ToString());
                     txtdescricao.Text = (r["nome"].ToString());
                     txtpreco.Text = (r["preco"].ToString());
                     txtqtd.Text = (r["quantidade"].ToString());
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao preencher");
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                produtos p3 = new produtos();
+
+                p3.atualizarProduto(int.Parse(txtCodigo.Text), txtdescricao.Text, float.Parse(txtpreco.Text), int.Parse(txtqtd.Text));
+                MySqlDataReader r = p3.consultarProduto(int.Parse(txtCodigo.Text));
+                while (r.Read())
+                {
+                    txtCodigo.Text = (r["codigo"].ToString());
+                    txtdescricao.Text = (r["nome"].ToString());
+                    txtpreco.Text = (r["preco"].ToString());
+                    txtqtd.Text = (r["quantidade"].ToString());
+                }
+                MessageBox.Show("Produto Atualizado!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             finally
             {
