@@ -194,5 +194,11 @@ namespace tcc
             }
             txtCod.Select();
         }
+
+        private void btnQtd_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

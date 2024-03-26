@@ -29,17 +29,51 @@ namespace tcc
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbxProdutos = new System.Windows.Forms.ListBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quanti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbxProdutos
+            // dataGridView1
             // 
-            this.lbxProdutos.FormattingEnabled = true;
-            this.lbxProdutos.Location = new System.Drawing.Point(85, 88);
-            this.lbxProdutos.Name = "lbxProdutos";
-            this.lbxProdutos.Size = new System.Drawing.Size(575, 277);
-            this.lbxProdutos.TabIndex = 0;
-            this.lbxProdutos.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Código,
+            this.name,
+            this.Preço,
+            this.Quanti});
+            this.dataGridView1.Location = new System.Drawing.Point(32, 78);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(740, 395);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.Width = 150;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Nome";
+            this.name.Name = "name";
+            this.name.Width = 250;
+            // 
+            // Preço
+            // 
+            this.Preço.HeaderText = "Preço";
+            this.Preço.Name = "Preço";
+            this.Preço.Width = 150;
+            // 
+            // Quanti
+            // 
+            this.Quanti.HeaderText = "Quantidade";
+            this.Quanti.Name = "Quanti";
+            this.Quanti.Width = 150;
             // 
             // consulta
             // 
@@ -48,17 +82,22 @@ namespace tcc
             this.BackgroundImage = global::tcc.Properties.Resources._13;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(793, 497);
-            this.Controls.Add(this.lbxProdutos);
+            this.Controls.Add(this.dataGridView1);
             this.DoubleBuffered = true;
             this.Name = "consulta";
             this.Text = "consulta";
             this.Load += new System.EventHandler(this.consulta_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbxProdutos;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quanti;
     }
 }

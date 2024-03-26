@@ -16,42 +16,45 @@ namespace tcc
         string codigo, nome, preco1, qtd;
         private readonly object OrderDetailsTable;
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         public consulta()
         {
             InitializeComponent();
-
-  
+           
         }
+
+       
 
         private void consulta_Load(object sender, EventArgs e)
         {
-
-          
-
             produtos p1 = new produtos();
-         MySqlDataReader r = p1.consultarProdutos();
+            MySqlDataReader r = p1.consultarProdutos();
             while (r.Read())
-            {
-                codigo = r["codigo"].ToString();
-                nome = r["nome"].ToString();
-                preco1= r["preco"].ToString();
-                qtd = r["quantidade"].ToString(); 
-                lbxProdutos.Items.Add("Código: " + codigo + ", Nome:" + nome + " - R$" + preco1 +", Quamtidade:"+qtd);
-            }
+                {
+                  string nome = r["nome"].ToString();
+                  string codigo = r["codigo"].ToString();
+                  string preco = r["preco"].ToString();
+                  string quantidade = r["quantidade"].ToString();
+
+                    // Adicionar uma nova linha ao DataGridView e definir os valores das células
+                  dataGridView1.Rows.Add(codigo, nome, preco, quantidade);
+                }
+     
             DAO_Conexao.con.Close();
             try
             {
-               
-               
+
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro");
             }
-        }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }
