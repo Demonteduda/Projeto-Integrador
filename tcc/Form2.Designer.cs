@@ -30,7 +30,7 @@ namespace tcc
         private void InitializeComponent()
         {
             this.lbProdutos = new System.Windows.Forms.ListBox();
-            this.cmbPagamento = new System.Windows.Forms.ComboBox();
+            this.cmbQuantidade = new System.Windows.Forms.ComboBox();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +42,7 @@ namespace tcc
             this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnQtd = new System.Windows.Forms.Button();
+            this.btnComprar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -57,21 +57,17 @@ namespace tcc
             this.lbProdutos.TabIndex = 7;
             this.lbProdutos.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // cmbPagamento
+            // cmbQuantidade
             // 
-            this.cmbPagamento.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.cmbPagamento.FormattingEnabled = true;
-            this.cmbPagamento.Items.AddRange(new object[] {
-            "Dinheiro",
-            "Crédito",
-            "Debito",
-            "Alimentação"});
-            this.cmbPagamento.Location = new System.Drawing.Point(533, 330);
-            this.cmbPagamento.Name = "cmbPagamento";
-            this.cmbPagamento.Size = new System.Drawing.Size(167, 21);
-            this.cmbPagamento.TabIndex = 8;
-            this.cmbPagamento.SelectedIndexChanged += new System.EventHandler(this.cmbPagamento_SelectedIndexChanged);
-            this.cmbPagamento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbPagamento_KeyDown);
+            this.cmbQuantidade.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.cmbQuantidade.FormattingEnabled = true;
+            this.cmbQuantidade.Location = new System.Drawing.Point(533, 330);
+            this.cmbQuantidade.Name = "cmbQuantidade";
+            this.cmbQuantidade.Size = new System.Drawing.Size(167, 21);
+            this.cmbQuantidade.TabIndex = 8;
+            this.cmbQuantidade.Text = "    Quantidade";
+            this.cmbQuantidade.SelectedIndexChanged += new System.EventHandler(this.cmbPagamento_SelectedIndexChanged);
+            this.cmbQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbPagamento_KeyDown);
             // 
             // txtCod
             // 
@@ -194,22 +190,22 @@ namespace tcc
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
-            // btnQtd
+            // btnComprar
             // 
-            this.btnQtd.Location = new System.Drawing.Point(476, 371);
-            this.btnQtd.Name = "btnQtd";
-            this.btnQtd.Size = new System.Drawing.Size(75, 23);
-            this.btnQtd.TabIndex = 19;
-            this.btnQtd.Text = "Quantidade";
-            this.btnQtd.UseVisualStyleBackColor = true;
-            this.btnQtd.Click += new System.EventHandler(this.btnQtd_Click);
+            this.btnComprar.Location = new System.Drawing.Point(515, 371);
+            this.btnComprar.Name = "btnComprar";
+            this.btnComprar.Size = new System.Drawing.Size(75, 23);
+            this.btnComprar.TabIndex = 19;
+            this.btnComprar.Text = "Comprar";
+            this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 694);
-            this.Controls.Add(this.btnQtd);
+            this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -220,7 +216,7 @@ namespace tcc
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.cmbPagamento);
+            this.Controls.Add(this.cmbQuantidade);
             this.Controls.Add(this.lbProdutos);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Form2";
@@ -236,7 +232,7 @@ namespace tcc
         #endregion
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ListBox lbProdutos;
-        private System.Windows.Forms.ComboBox cmbPagamento;
+        private System.Windows.Forms.ComboBox cmbQuantidade;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label label1;
@@ -247,6 +243,6 @@ namespace tcc
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button btnQtd;
+        private System.Windows.Forms.Button btnComprar;
     }
 }

@@ -122,7 +122,25 @@ namespace tcc
             return consul;
         }
 
+        public bool comprarProd(int cod, int qtd1)
+        {
+            Console.WriteLine("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            bool compra = false;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand retirarEstoque = new MySqlCommand("update SyProduto set quantidade= quantidade - '"+qtd1+"'  where codigo ='" + cod + "'", DAO_Conexao.con);
+                Console.WriteLine("update SyProduto set quantidade = quantidade - '" + qtd1 + "'  where codigo = '" + cod + "'");
+                retirarEstoque.ExecuteNonQuery();
+                compra = true;
+            }
+            catch (Exception ex1)
+            {
+                Console.WriteLine(ex1.ToString());
+            }
 
+            return compra;
+        }
 
         public MySqlDataReader consultarProduto(int cod)
         {

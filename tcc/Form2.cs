@@ -16,6 +16,7 @@ namespace tcc
         public float total;
         public string valor;
         public string nome1;
+        public string quantidade;
        
         public Form2()
         {
@@ -72,7 +73,7 @@ namespace tcc
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (cmbPagamento.SelectedIndex==0)
+            if (cmbQuantidade.SelectedIndex==0)
             {
                 pagamento pg = new pagamento(txtValor.Text);
                 pg.Show();
@@ -126,11 +127,12 @@ namespace tcc
                 {
                     valor = r["preco"].ToString();
                     nome1 = r["nome"].ToString();
+                    quantidade = r["quantidade"].ToString();
                 }
                 DAO_Conexao.con.Close();          
                 try
                 {
-                    lbProdutos.Items.Add("Código: " + txtCod.Text + ", Nome:" + nome1 + " - R$" + valor);
+                    lbProdutos.Items.Add("Código: " + txtCod.Text + ", Nome: " + nome1  + " - R$" + valor+ ", Quantidade: " + quantidade);
                     total += float.Parse(valor);
                     txtValor.Text = total.ToString();
                     txtCod.Text = "";
@@ -140,6 +142,12 @@ namespace tcc
                     lbProdutos.Items.Clear();
                     MessageBox.Show("Produto não cadastrado");
                 }
+                int qtd = int.Parse(quantidade);
+                for(int i=0; i<=qtd;i++)
+                {
+                    cmbQuantidade.Items.Add(i.ToString());
+                }
+                
             }
             
          
@@ -181,8 +189,8 @@ namespace tcc
             if (e.KeyCode == Keys.F1)
             {
                 // Abrir o ComboBox
-                cmbPagamento.DroppedDown = true;
-                cmbPagamento.SelectedIndex = 0;
+                cmbQuantidade.DroppedDown = true;
+                cmbQuantidade.SelectedIndex = 0;
             }
         }
 
@@ -199,6 +207,26 @@ namespace tcc
         {
             
 
+
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+      
+            if (txtCod != null)
+            {
+                if (cmbQuantidade.SelectedItem != null)
+                {
+                    Console.WriteLine("Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa===");
+                    DAO_Conexao.con.Open();
+                    produtos prod = new produtos();
+                    if (prod.comprarProd(int.Parse(txtCod.Text), int.Parse(cmbQuantidade.SelectedItem.ToString()))
+                      MessageBox.Show("Compra efetuada");
+                }
+                else
+                    MessageBox.Show("Informe a quantidade que deseja comprar!");
+            }
+            else MessageBox.Show("Digíte o código do produto que deseja comprar!");
         }
     }
 }
