@@ -62,6 +62,8 @@ namespace tcc
             this.cmbQuantidade.TabIndex = 8;
             this.cmbQuantidade.Text = "    Quantidade";
             this.cmbQuantidade.SelectedIndexChanged += new System.EventHandler(this.cmbPagamento_SelectedIndexChanged);
+            this.cmbQuantidade.Click += new System.EventHandler(this.cmbQuantidade_Click);
+            this.cmbQuantidade.Enter += new System.EventHandler(this.cmbQuantidade_Enter);
             this.cmbQuantidade.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbPagamento_KeyDown);
             // 
             // txtCod
@@ -80,21 +82,23 @@ namespace tcc
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.label1.Location = new System.Drawing.Point(383, 303);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Valor:";
+            this.label1.Text = "Total:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label2.Location = new System.Drawing.Point(381, 273);
+            this.label2.Location = new System.Drawing.Point(372, 271);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(55, 16);
             this.label2.TabIndex = 12;
             this.label2.Text = "Código:";
             // 

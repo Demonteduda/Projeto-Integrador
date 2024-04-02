@@ -15,6 +15,7 @@ namespace tcc
     {  
         string codigo, nome, preco1, qtd;
         private readonly object OrderDetailsTable;
+        
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

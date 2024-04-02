@@ -15,9 +15,10 @@ namespace tcc
     {
         public float total;
         public string valor;
-        public string nome1;
+        public string nome1,quan;
         public string quantidade;
-       
+        public string qtd1, codi;
+        public int cont;
         public Form2()
         {
             InitializeComponent();
@@ -119,6 +120,7 @@ namespace tcc
         {
             if (e.KeyChar == 13)
             {
+                codi = txtCod.Text;
                 produtos p1 = new produtos();
                 MySqlDataReader r = p1.consultarProduto(int.Parse(txtCod.Text));
                 while (r.Read())
@@ -126,7 +128,9 @@ namespace tcc
                     valor = r["preco"].ToString();
                     nome1 = r["nome"].ToString();
                     quantidade = r["quantidade"].ToString();
-                    dataGridView1.Rows.Add(txtCod.Text, nome1, valor, quantidade);
+                    qtd1 = "1";
+                    dataGridView1.Rows.Add(txtCod.Text, nome1, valor, qtd1);
+                    cont += 1;
                 }
                 DAO_Conexao.con.Close();          
                 try
@@ -156,8 +160,8 @@ namespace tcc
 
         private void button4_Click(object sender, EventArgs e)
         {
-            txtCod.Select();
-            if (dataGridView1.Rows.Count<1)
+           
+            if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("A tabela está vazia.");
                
@@ -233,6 +237,21 @@ namespace tcc
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void cmbQuantidade_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbQuantidade_Enter(object sender, EventArgs e)
+        {
+
+            //int qtd11= int.Parse(cmbQuantidade.SelectedItem.ToString());
+            //Console.WriteLine("aaaaaaaaaaaaaaaaaaaa=  "+qtd11);
+           // dataGridView1.Rows[cont].Cells[3].Value 
+            
+            // if(dataGridView1.SelectedRows.)
         }
     }
 }
