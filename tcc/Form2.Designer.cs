@@ -42,14 +42,14 @@ namespace tcc
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnComprar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridProdu = new System.Windows.Forms.DataGridView();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quanti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProdu)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbQuantidade
@@ -199,22 +199,22 @@ namespace tcc
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
-            // dataGridView1
+            // dataGridProdu
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.MediumTurquoise;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridProdu.BackgroundColor = System.Drawing.Color.MediumTurquoise;
+            this.dataGridProdu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridProdu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.dataGridProdu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridProdu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.name,
             this.Preço,
             this.Quanti});
-            this.dataGridView1.Location = new System.Drawing.Point(386, 23);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(314, 225);
-            this.dataGridView1.TabIndex = 20;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridProdu.Location = new System.Drawing.Point(386, 23);
+            this.dataGridProdu.Name = "dataGridProdu";
+            this.dataGridProdu.Size = new System.Drawing.Size(314, 225);
+            this.dataGridProdu.TabIndex = 20;
+            this.dataGridProdu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Código
             // 
@@ -244,7 +244,7 @@ namespace tcc
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 694);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridProdu);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -263,7 +263,7 @@ namespace tcc
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridProdu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,7 +283,7 @@ namespace tcc
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnComprar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridProdu;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
