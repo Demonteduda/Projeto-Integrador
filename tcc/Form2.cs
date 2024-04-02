@@ -24,8 +24,7 @@ namespace tcc
 
             txtValor.Enabled = false;
             //initializeFullscreenImage();
-
-         
+            dataGridView1.ReadOnly = true;          
         }
 
         /* private void initializeFullscreenImage()
@@ -41,7 +40,6 @@ namespace tcc
             button1.Font = new Font("Cambria", 10, FontStyle.Bold);
             button2.Font = new Font("Cambria", 9, FontStyle.Bold);
             button3.Font = new Font("Cambria", 8, FontStyle.Bold);
-
 
         }
 
@@ -79,7 +77,7 @@ namespace tcc
                 pg.Show();
                 this.Close();
             }
-            lbProdutos.Items.Clear();
+            dataGridView1.ClearSelection();
 
         }
 
@@ -128,18 +126,18 @@ namespace tcc
                     valor = r["preco"].ToString();
                     nome1 = r["nome"].ToString();
                     quantidade = r["quantidade"].ToString();
+                    dataGridView1.Rows.Add(txtCod.Text, nome1, valor, quantidade);
                 }
                 DAO_Conexao.con.Close();          
                 try
                 {
-                    lbProdutos.Items.Add("Código: " + txtCod.Text + ", Nome: " + nome1  + " - R$" + valor+ ", Quantidade: " + quantidade);
                     total += float.Parse(valor);
                     txtValor.Text = total.ToString();
                     txtCod.Text = "";
                 }
-                catch(Exception ex)
+                catch(Exception)
                 {
-                    lbProdutos.Items.Clear();
+                
                     MessageBox.Show("Produto não cadastrado");
                 }
                 int qtd = int.Parse(quantidade);
@@ -159,14 +157,14 @@ namespace tcc
         private void button4_Click(object sender, EventArgs e)
         {
             txtCod.Select();
-            if (lbProdutos.Items.Count < 0)
+            if (dataGridView1.Rows.Count<1)
             {
-                MessageBox.Show("O ListBox está vazio.");
+                MessageBox.Show("A tabela está vazia.");
                
             }
             else
             {
-                lbProdutos.Items.Clear();
+                dataGridView1.ClearSelection();
                 txtValor.Text = "";
                 txtCod.Text = "";
                 total = 0;
@@ -196,11 +194,9 @@ namespace tcc
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if(lbProdutos.SelectedIndex != -1)
-            {
-                lbProdutos.Items.RemoveAt(lbProdutos.SelectedIndex);
-            }
-            txtCod.Select();
+           
+       
+
         }
 
         private void btnQtd_Click(object sender, EventArgs e)
@@ -212,7 +208,7 @@ namespace tcc
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-      
+      /*
             if (txtCod != null)
             {
                 if (cmbQuantidade.SelectedItem != null)
@@ -221,12 +217,22 @@ namespace tcc
                     DAO_Conexao.con.Open();
                     produtos prod = new produtos();
                     if (prod.comprarProd(int.Parse(txtCod.Text), int.Parse(cmbQuantidade.SelectedItem.ToString()))
-                      MessageBox.Show("Compra efetuada");
+                        {
+                        MessageBox.Show("Compra efetuada");
+                    }
+                      
                 }
                 else
                     MessageBox.Show("Informe a quantidade que deseja comprar!");
             }
             else MessageBox.Show("Digíte o código do produto que deseja comprar!");
+        
+      */
+         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

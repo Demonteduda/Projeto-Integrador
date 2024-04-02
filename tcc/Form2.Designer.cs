@@ -29,7 +29,6 @@ namespace tcc
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbProdutos = new System.Windows.Forms.ListBox();
             this.cmbQuantidade = new System.Windows.Forms.ComboBox();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,19 +42,15 @@ namespace tcc
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnComprar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quanti = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbProdutos
-            // 
-            this.lbProdutos.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.lbProdutos.FormattingEnabled = true;
-            this.lbProdutos.Location = new System.Drawing.Point(386, 26);
-            this.lbProdutos.Name = "lbProdutos";
-            this.lbProdutos.Size = new System.Drawing.Size(314, 225);
-            this.lbProdutos.TabIndex = 7;
-            this.lbProdutos.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // cmbQuantidade
             // 
@@ -200,11 +195,52 @@ namespace tcc
             this.btnComprar.UseVisualStyleBackColor = true;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.MediumTurquoise;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Código,
+            this.name,
+            this.Preço,
+            this.Quanti});
+            this.dataGridView1.Location = new System.Drawing.Point(386, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(314, 225);
+            this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.Width = 50;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Nome";
+            this.name.Name = "name";
+            // 
+            // Preço
+            // 
+            this.Preço.HeaderText = "Preço";
+            this.Preço.Name = "Preço";
+            this.Preço.Width = 50;
+            // 
+            // Quanti
+            // 
+            this.Quanti.HeaderText = "Quantidade";
+            this.Quanti.Name = "Quanti";
+            this.Quanti.Width = 70;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1285, 694);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -217,13 +253,13 @@ namespace tcc
             this.Controls.Add(this.txtCod);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbQuantidade);
-            this.Controls.Add(this.lbProdutos);
             this.Controls.Add(this.pictureBox2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -231,7 +267,6 @@ namespace tcc
 
         #endregion
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.ListBox lbProdutos;
         private System.Windows.Forms.ComboBox cmbQuantidade;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtCod;
@@ -244,5 +279,10 @@ namespace tcc
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnComprar;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quanti;
     }
 }
