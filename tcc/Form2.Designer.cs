@@ -211,7 +211,9 @@ namespace tcc
             this.Preço,
             this.Quanti});
             this.dataGridProdu.Location = new System.Drawing.Point(386, 23);
+            this.dataGridProdu.MultiSelect = false;
             this.dataGridProdu.Name = "dataGridProdu";
+            this.dataGridProdu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridProdu.Size = new System.Drawing.Size(314, 225);
             this.dataGridProdu.TabIndex = 20;
             this.dataGridProdu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
