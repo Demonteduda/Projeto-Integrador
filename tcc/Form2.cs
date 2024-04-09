@@ -21,6 +21,7 @@ namespace tcc
         public int cont = 0;
         public float total1 = 0;
         public float valor1 = 0;
+        public float total2 = 0; 
         public Form2()
         {
             InitializeComponent();
@@ -218,59 +219,54 @@ namespace tcc
 
         private void button5_Click(object sender, EventArgs e)
         {
-           
+            produtos p2 = new produtos();
+            if (dataGridProdu.Rows.Count == 0)
+            {
+                MessageBox.Show("Vazio");
+            }
+            else
+            {
 
-                produtos p2 = new produtos();
-                if (dataGridProdu.Rows.Count - 1 == 0)
+                MySqlDataReader r = p2.consultarProduto(int.Parse(dataGridProdu.SelectedRows[0].Cells[0].Value.ToString()));
+                while (r.Read())
                 {
-                    MessageBox.Show("Vazio");
-                }
-                else
-                {
-                    MySqlDataReader r = p2.consultarProduto(int.Parse(dataGridProdu.SelectedRows[0].Cells[0].Value.ToString()));
-                    while (r.Read())
+                    Console.WriteLine(total2);
+                    valor1 = float.Parse(r["preco"].ToString());
+                    int codD = int.Parse(r["codigo"].ToString());
+
+                    for (int i = 0; i < dataGridProdu.Rows.Count; i++)
                     {
-                        valor1 = float.Parse(r["preco"].ToString());
-                        int codD = int.Parse(r["codigo"].ToString());
-                        
-                        for (int i = 0; i < dataGridProdu.Rows.Count - 1; i++)
+                        if (int.Parse(dataGridProdu.Rows[i].Cells[0].Value.ToString()) == codD)
                         {
-                            total1 = float.Parse(txtValor.Text);
-                            total1 = total1 - valor1;
-                            if(dataGridProdu.Rows.Count-1 ==0)
-                            {
-                                txtValor.Text = "0";
-                            }
-                            else
-                            txtValor.Text = total1.ToString();
 
-                            if (int.Parse(dataGridProdu.Rows[i].Cells[0].Value.ToString()) == codD)
-                            {
-                                dataGridProdu.Rows.RemoveAt(i);
-                                break;
-                            }
+                            dataGridProdu.Rows.RemoveAt(i);
+                            break;
                         }
 
                     }
-                    DAO_Conexao.con.Close();
-                    try
-                    {
-                        total -= float.Parse(valor);
-                        txtValor.Text = total.ToString();
-                        txtCod.Text = "";
-                    }
-                    catch (Exception)
-                    {
 
-                        MessageBox.Show("Produto não cadastrado");
-                    }
+                    total1 = float.Parse(txtValor.Text);
+                    total2 = total1 - valor1;
+                    txtValor.Text = total2.ToString();
 
-                
+
+                }
+                DAO_Conexao.con.Close();
+                try
+                {
+
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Produto não cadastrado");
+                }
+
             }
 
             txtCod.Focus();
-            
-             
+
+
         }
 
         private void btnQtd_Click(object sender, EventArgs e)
