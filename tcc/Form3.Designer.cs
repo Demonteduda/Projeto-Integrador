@@ -137,6 +137,7 @@ namespace tcc
             this.DoubleBuffered = true;
             this.Name = "cadastro";
             this.Text = "cadastro";
+            this.Load += new System.EventHandler(this.cadastro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

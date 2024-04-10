@@ -201,6 +201,7 @@ namespace tcc
             // 
             // dataGridProdu
             // 
+            this.dataGridProdu.AllowUserToAddRows = false;
             this.dataGridProdu.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dataGridProdu.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridProdu.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedVertical;

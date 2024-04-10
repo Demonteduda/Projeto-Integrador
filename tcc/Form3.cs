@@ -36,6 +36,11 @@ namespace tcc
 
                     p1.cadastrarProduto(int.Parse(txtCodigo.Text), txtdescricao.Text, float.Parse(txtpreco.Text), int.Parse(txtqtd.Text));
                     MessageBox.Show("Produto Cadastrado!");
+                    txtCodigo.Text = "";
+                    txtdescricao.Text = "";
+                    txtpreco.Text = "";
+                    txtqtd.Text = "";
+
                 }
                 else
                     MessageBox.Show("Um produto com esse código já está Cadastrado");
@@ -97,6 +102,11 @@ namespace tcc
                     txtqtd.Text = (r["quantidade"].ToString());
                 }
                 MessageBox.Show("Produto Atualizado!");
+                txtCodigo.Text = "";
+                txtdescricao.Text = "";
+                txtpreco.Text = "";
+                txtqtd.Text = "";
+
             }
             catch (Exception ex)
             {
@@ -106,6 +116,11 @@ namespace tcc
             {
                 DAO_Conexao.con.Close();
             }
+
+        }
+
+        private void cadastro_Load(object sender, EventArgs e)
+        {
 
         }
     }
