@@ -85,8 +85,51 @@ namespace tcc
             dataGridProdu.ClearSelection();
 
         }
-
+        
+         
         private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
+{
+            int i = 0;
+    int validacao = 0;
+
+    foreach (DataGridViewRow row in dataGridProdu.Rows)
+    {
+               
+        // Verifique se a célula na primeira coluna contém o valor 'codi'
+        if (row.Cells[0].Value.ToString() == codi)
+        { 
+            MessageBox.Show("ENTROU!!!!!!!!!!!!!!!!!");
+            i++;
+            validacao = 1;
+
+            // Converta 'valor' do produto para valorFLOAT
+            float valorFloat=total;
+                    float sobra = total - float.Parse(valor);
+                    if (i > 1) { valorFloat = total - sobra; }
+                   
+                    MessageBox.Show(valorFloat.ToString());
+                // Calcule o total
+                float tot = valorFloat * cmbQuantidade.SelectedIndex;
+                    float tot1 = tot + float.Parse(txtValor.Text) - valorFloat;
+                total = tot1;
+                        MessageBox.Show(total.ToString());
+                // Atualize as células na grade
+                row.Cells[2].Value = tot.ToString();
+                txtValor.Text = tot.ToString();
+                row.Cells[3].Value = cmbQuantidade.SelectedIndex;
+            
+        }
+    }
+
+    if (validacao == 0)
+    {
+        MessageBox.Show("Erro!!");
+    }
+
+    txtCod.Focus();
+}
+         
+        /*private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             int validacao = 0;   
@@ -109,7 +152,7 @@ namespace tcc
                     MessageBox.Show("Erro!!");
                 }
             txtCod.Focus();
-        }
+        }*/
 
         private void txtCod_TextChanged(object sender, EventArgs e)
         {
@@ -141,68 +184,68 @@ namespace tcc
         }
 
         private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
-        { 
-            cmbQuantidade.Items.Clear();
-            if(txtCod.Text !="")
-            {
-              if (e.KeyChar == 13)
-            {
+        {
+
+                if (e.KeyChar == 13) // Se a tecla pressionada for Enter
+                {
                 codi = txtCod.Text;
-                    for (int i = 0; i < dataGridProdu.Rows.Count; i++)
+                    if (!string.IsNullOrEmpty(txtCod.Text))
                     {
-                        if (dataGridProdu.Rows[i].Cells[0].Value.ToString() == codi)
+                        string codi = txtCod.Text;
+                        bool produtoExistente = false;
+
+                        // Verificar se o produto já foi adicionado
+                        foreach (DataGridViewRow row in dataGridProdu.Rows)
                         {
-                            MessageBox.Show("Produto já adicionado!");
-                        }
-                        else
-                        {
-                            produtos p1 = new produtos();
-                            MySqlDataReader r = p1.consultarProduto(int.Parse(txtCod.Text));
-                            while (r.Read())
+                            if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == codi)
                             {
-                                if (txtCod.Text == r["codigo"].ToString())
+                                produtoExistente = true;
+                                break;
+                            }
+                        }
+
+                    if (!produtoExistente)
+                    {
+                        produtos p1 = new produtos();
+                        MySqlDataReader r = p1.consultarProduto(int.Parse(codi));
+
+                        while (r.Read())
+                        {
+                            if (codi == r["codigo"].ToString())
+                            {
+                                valor = r["preco"].ToString();
+                                string nome1 = r["nome"].ToString();
+                                string quantidade = r["quantidade"].ToString();
+                                dataGridProdu.Rows.Add(codi, nome1, valor, quantidade);
+                                cmbQuantidade.Items.Clear();
+                                for (int j = 0; j <= int.Parse(quantidade); j++)
                                 {
-                                    valor = r["preco"].ToString();
-                                    nome1 = r["nome"].ToString();
-                                    quantidade = r["quantidade"].ToString();
-                                    qtd1 = "1";
-                                    dataGridProdu.Rows.Add(txtCod.Text, nome1, valor, qtd1);
-                                    cont += 1;
-                                    total += float.Parse(valor);
-                                    int qtd = int.Parse(quantidade);
-                                    for (int j = 0; j <= qtd; j++)
-                                    { 
-                                        cmbQuantidade.Items.Add(j.ToString());
-                                    }
-                                        
+                                    cmbQuantidade.Items.Add(j.ToString());
                                 }
-                                else
-                                    MessageBox.Show("Um produto com esse código não está cadastrado.");
 
+                                cont += 1;
+                                total += float.Parse(valor);
+                                                       break; // Encerrar o loop enquanto encontrou o produto
                             }
-                            DAO_Conexao.con.Close();
-                            try
-                            {
-                                txtValor.Text = total.ToString();
-                                txtCod.Text = "";
-                            }
-                            catch (Exception)
-                            {
-
-                                MessageBox.Show("Produto não cadastrado");
-                            }
-
-
                         }
 
+                        DAO_Conexao.con.Close();
+
+                        // Atualizar o total e limpar o campo de código
+                        txtValor.Text = total.ToString();
+                        txtCod.Text = "";
                     }
-            }
+                    else
+                        MessageBox.Show("Produto já adicionado à tabela!");
+                    
+                    }
+                }
+
             
-            }
-           
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+            private void button4_Click(object sender, EventArgs e)
         {
            DialogResult result = MessageBox.Show(
            "Deseja apagar mesmo?",

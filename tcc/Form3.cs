@@ -59,29 +59,36 @@ namespace tcc
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            try
+            if (txtCodigo.Text == "")
             {
-
-                produtos p2 = new produtos();
-
-                MySqlDataReader r = p2.consultarProduto(int.Parse(txtCodigo.Text));
-
-
-                while (r.Read())
+                MessageBox.Show("Insira um código para consultar o produto!");
+            }
+            else
+            {
+                try
                 {
-                    txtCodigo.Text = (r["codigo"].ToString());
-                    txtdescricao.Text = (r["nome"].ToString());
-                    txtpreco.Text = (r["preco"].ToString());
-                    txtqtd.Text = (r["quantidade"].ToString());
+
+                    produtos p2 = new produtos();
+
+                    MySqlDataReader r = p2.consultarProduto(int.Parse(txtCodigo.Text));
+
+
+                    while (r.Read())
+                    {
+                        txtCodigo.Text = (r["codigo"].ToString());
+                        txtdescricao.Text = (r["nome"].ToString());
+                        txtpreco.Text = (r["preco"].ToString());
+                        txtqtd.Text = (r["quantidade"].ToString());
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao preencher");
-            }
-            finally
-            {
-                DAO_Conexao.con.Close();
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao preencher");
+                }
+                finally
+                {
+                    DAO_Conexao.con.Close();
+                }
             }
 
         }
@@ -116,6 +123,7 @@ namespace tcc
             {
                 DAO_Conexao.con.Close();
             }
+            
 
         }
 

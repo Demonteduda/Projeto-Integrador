@@ -79,17 +79,17 @@ namespace tcc
 
         }
 
-        public bool atualizarProduto(int cod2, string nome2, float preco2, int qtd2)
+
+        public MySqlDataReader atualizarProduto(int cod2, string nome2, float preco2, int qtd2)
         {
-            bool atu= false;
+            MySqlDataReader atu= null;
 
             try
             {
+       
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("update SyProduto set nome ='"+nome2+"', preco='"+preco2+"'," +
-                    " quantidade ='"+qtd2+"'  where codigo ="+cod2, DAO_Conexao.con);
-               insere.ExecuteNonQuery();
-                atu = true;
+                MySqlCommand insere = new MySqlCommand("update SyProduto set nome ='"+nome2+"',preco='"+preco2+"',quantidade ='"+qtd2+"' where codigo ='"+cod2+"'", DAO_Conexao.con);
+               insere.ExecuteReader();
             }
 
             catch (Exception ex1)
