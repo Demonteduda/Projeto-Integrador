@@ -85,76 +85,72 @@ namespace tcc
             dataGridProdu.ClearSelection();
 
         }
-        
-         
+
+
         private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
-{
-            int i = 0;
-    int validacao = 0;
-
-    foreach (DataGridViewRow row in dataGridProdu.Rows)
-    {
-               
-        // Verifique se a célula na primeira coluna contém o valor 'codi'
-        if (row.Cells[0].Value.ToString() == codi)
-        { 
-            MessageBox.Show("ENTROU!!!!!!!!!!!!!!!!!");
-            i++;
-            validacao = 1;
-
-            // Converta 'valor' do produto para valorFLOAT
-            float valorFloat=total;
-                    float sobra = total - float.Parse(valor);
-                    if (i > 1) { valorFloat = total - sobra; }
-                   
-                    MessageBox.Show(valorFloat.ToString());
-                // Calcule o total
-                float tot = valorFloat * cmbQuantidade.SelectedIndex;
-                    float tot1 = tot + float.Parse(txtValor.Text) - valorFloat;
-                total = tot1;
-                        MessageBox.Show(total.ToString());
-                // Atualize as células na grade
-                row.Cells[2].Value = tot.ToString();
-                txtValor.Text = tot.ToString();
-                row.Cells[3].Value = cmbQuantidade.SelectedIndex;
-            
-        }
-    }
-
-    if (validacao == 0)
-    {
-        MessageBox.Show("Erro!!");
-    }
-
-    txtCod.Focus();
-}
-         
-        /*private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
+            int validacao = 0;
 
-            int validacao = 0;   
-            for(int i=0;i<dataGridProdu.RowCount;i++)
+            foreach (DataGridViewRow row in dataGridProdu.Rows)
             {
-                if (dataGridProdu.Rows[i].Cells[0].Value.ToString() == codi)
+                // Verifica se a célula na primeira coluna contém o valor 'codi'
+                if (row.Cells[0].Value.ToString() == codi)
                 {
+                    MessageBox.Show("ENTROU!!!!!!!!!!!!!!!!!");
                     validacao = 1;
-                    float tot = float.Parse(valor) * cmbQuantidade.SelectedIndex;
-                    float tot1 = tot + float.Parse(txtValor.Text) - float.Parse(valor)* int.Parse(dataGridProdu.Rows[i].Cells[3].Value.ToString()) ;
-                    total = tot1;
-                    dataGridProdu.Rows[i].Cells[2].Value = tot.ToString();
-                    txtValor.Text = tot1.ToString();
-                    dataGridProdu.Rows[i].Cells[3].Value = cmbQuantidade.SelectedIndex;
-                }
-               
-            }
-             if(validacao==0)
-                {
-                    MessageBox.Show("Erro!!");
-                }
-            txtCod.Focus();
-        }*/
 
-        private void txtCod_TextChanged(object sender, EventArgs e)
+                    // Obtém o valor do produto atual da célula
+                    float valorProduto = float.Parse(row.Cells[2].Value.ToString());
+
+                    // Calcula o subtotal do produto atual considerando a nova quantidade selecionada
+                    float subtotalProduto = valorProduto * cmbQuantidade.SelectedIndex;
+
+                    // Atualiza as células na grade com os novos valores
+                    row.Cells[2].Value = subtotalProduto.ToString();
+                    txtValor.Text = subtotalProduto.ToString();
+                    row.Cells[3].Value = cmbQuantidade.SelectedIndex;
+                }
+            }
+
+            // Calcula o novo total após a remoção do item da tabela
+            float novoTotal = 0;
+            foreach (DataGridViewRow row in dataGridProdu.Rows)
+            {
+                float subtotal = float.Parse(row.Cells[2].Value.ToString());
+                novoTotal += subtotal;
+            }
+            total = novoTotal;
+            txtValor.Text = total.ToString();
+
+            txtCod.Focus();
+        }
+
+            /*private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
+            {
+
+                int validacao = 0;   
+                for(int i=0;i<dataGridProdu.RowCount;i++)
+                {
+                    if (dataGridProdu.Rows[i].Cells[0].Value.ToString() == codi)
+                    {
+                        validacao = 1;
+                        float tot = float.Parse(valor) * cmbQuantidade.SelectedIndex;
+                        float tot1 = tot + float.Parse(txtValor.Text) - float.Parse(valor)* int.Parse(dataGridProdu.Rows[i].Cells[3].Value.ToString()) ;
+                        total = tot1;
+                        dataGridProdu.Rows[i].Cells[2].Value = tot.ToString();
+                        txtValor.Text = tot1.ToString();
+                        dataGridProdu.Rows[i].Cells[3].Value = cmbQuantidade.SelectedIndex;
+                    }
+
+                }
+                 if(validacao==0)
+                    {
+                        MessageBox.Show("Erro!!");
+                    }
+                txtCod.Focus();
+            }*/
+
+            private void txtCod_TextChanged(object sender, EventArgs e)
         {
         }
 
@@ -265,6 +261,7 @@ namespace tcc
                 }
                 else
                 {
+                    txtValor.Text = "0";
                     MessageBox.Show("A tabela está vazia.");
 
                 }
@@ -299,69 +296,119 @@ namespace tcc
                 cmbQuantidade.SelectedIndex = 0;
             }
         }
+        private void RemoverProduto(string codigo, int quantidade)
+{
+    foreach (DataGridViewRow row in dataGridProdu.Rows)
+    {
+        if (row.Cells[0].Value.ToString() == codigo)
+        {
+            float valorProduto = float.Parse(row.Cells[2].Value.ToString());
+            int quantidadeAtual = int.Parse(row.Cells[3].Value.ToString());
 
+            // Calcular subtotal do produto de acordo com a quantidade a ser removida
+            float subtotalRemovido = valorProduto * quantidade;
+
+            if (quantidadeAtual > quantidade)
+            {
+                // Se a quantidade atual for maior que a quantidade a ser removida, atualizar quantidade e subtotal
+                row.Cells[3].Value = quantidadeAtual - quantidade;
+                float subtotalAtual = valorProduto * (quantidadeAtual - quantidade);
+                row.Cells[2].Value = subtotalAtual.ToString();
+            }
+            else
+            {
+                // Se a quantidade atual for igual ou menor que a quantidade a ser removida, remover a linha
+                dataGridProdu.Rows.Remove(row);
+            }
+
+            // Atualizar o total subtraindo o subtotal do produto removido
+            total -= subtotalRemovido;
+            txtValor.Text = total.ToString();
+
+            break; // Saia do loop após encontrar e processar o produto
+        }
+    }
+}
         private void button5_Click(object sender, EventArgs e)
         {
             produtos p2 = new produtos();
+
             if (dataGridProdu.Rows.Count == 0)
             {
+                txtValor.Text = "0";
                 MessageBox.Show("Vazio");
             }
             else
             {
-
-                MySqlDataReader r = p2.consultarProduto(int.Parse(dataGridProdu.SelectedRows[0].Cells[0].Value.ToString()));
-                while (r.Read())
+                if (dataGridProdu.SelectedRows.Count > 0)
                 {
-                    Console.WriteLine(total2);
-                    valor1 = float.Parse(r["preco"].ToString());
-                    int codD = int.Parse(r["codigo"].ToString());
+                    int codigoSelecionado = int.Parse(dataGridProdu.SelectedRows[0].Cells[0].Value.ToString());
+                    int quantidadeRemover = int.Parse(dataGridProdu.SelectedRows[0].Cells[3].Value.ToString());
 
-                    DialogResult result = MessageBox.Show(
-                     "Deseja apagar mesmo?",
-                     "Aviso",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Information,
-                    MessageBoxDefaultButton.Button2);
-
-                    if (result == DialogResult.Yes)
+                    // Consulta o produto selecionado
+                    MySqlDataReader r = p2.consultarProduto(codigoSelecionado);
+                    while (r.Read())
                     {
-                        for (int i = 0; i < dataGridProdu.Rows.Count; i++)
-                        {
-                            if (int.Parse(dataGridProdu.Rows[i].Cells[0].Value.ToString()) == codD)
-                            {
+                        valor1 = float.Parse(r["preco"].ToString());
 
-                                dataGridProdu.Rows.RemoveAt(i);
-                                break;
+                        DialogResult result = MessageBox.Show(
+                            "Deseja apagar mesmo?",
+                            "Aviso",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Information,
+                            MessageBoxDefaultButton.Button2);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            // Remove a quantidade de produtos selecionados
+                            for (int i = 0; i < dataGridProdu.Rows.Count; i++)
+                            {
+                                if (int.Parse(dataGridProdu.Rows[i].Cells[0].Value.ToString()) == codigoSelecionado)
+                                {
+                                    int quantidadeAtual = int.Parse(dataGridProdu.Rows[i].Cells[3].Value.ToString());
+                                    if (quantidadeAtual > quantidadeRemover)
+                                    {
+                                        // Se a quantidade atual for maior que a quantidade a ser removida, atualiza a quantidade e subtotal
+                                        dataGridProdu.Rows[i].Cells[3].Value = quantidadeAtual - quantidadeRemover;
+                                        float subtotalAtual = float.Parse(dataGridProdu.Rows[i].Cells[2].Value.ToString()) * (quantidadeAtual - quantidadeRemover);
+                                        dataGridProdu.Rows[i].Cells[2].Value = subtotalAtual.ToString();
+                                    }
+                                    else
+                                    {
+                                        // Caso contrário, remove completamente a linha correspondente
+                                        dataGridProdu.Rows.RemoveAt(i);
+                                    }
+                                    break;
+                                }
                             }
 
+                            // Atualiza o valor total subtraindo o valor do produto multiplicado pela quantidade removida
+                            total1 = float.Parse(txtValor.Text);
+                            total1 -= valor1 * quantidadeRemover;
+                            txtValor.Text = total1.ToString();
+
+                            // Se a tabela estiver vazia, define o total como 0
+                            if (dataGridProdu.Rows.Count == 0)
+                            {
+                                total = 0;
+                            }
                         }
-
-                        total1 = float.Parse(txtValor.Text);
-                        total2 = total1 - valor1;
-                        txtValor.Text = total2.ToString();
-
-                        if (dataGridProdu.Rows.Count == 0)
+                        else if (result == DialogResult.No)
                         {
-                            total = 0;
+                            // Não faz nada se o usuário optar por não apagar o produto
                         }
                     }
-                    else if (result == DialogResult.No)
-                    {
-
-                    }
-                    else
-                    MessageBox.Show("Produto não cadastrado");
-
+                    DAO_Conexao.con.Close();
                 }
-                DAO_Conexao.con.Close();             
-
+                else
+                {
+                    MessageBox.Show("Selecione um produto para remover!");
+                }
             }
             txtCod.Focus();
-
         }
 
-        private void btnQtd_Click(object sender, EventArgs e)
+            private void btnQtd_Click(object sender, EventArgs e)
         {
             
 

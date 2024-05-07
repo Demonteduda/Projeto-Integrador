@@ -191,7 +191,7 @@ namespace tcc
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(515, 371);
+            this.btnComprar.Location = new System.Drawing.Point(623, 371);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(75, 23);
             this.btnComprar.TabIndex = 19;
