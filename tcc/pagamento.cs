@@ -16,6 +16,9 @@ namespace tcc
         public pagamento(string valor)
         {
             InitializeComponent();
+
+
+      
             txtTotalPago.Text = valor;
         }
 
@@ -61,6 +64,16 @@ namespace tcc
                 txtTroco.Text = ("R$" + troco);
             }
            
+        }
+
+        private void txtValorEntregue_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void pagamento_Load(object sender, EventArgs e)
+        {
+            txtValorEntregue.Focus();
         }
     }
 }

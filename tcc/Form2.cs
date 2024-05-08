@@ -43,6 +43,11 @@ namespace tcc
         {
             txtCod.Select();
 
+            cmbPagamento.Items.Add("Débito");
+            cmbPagamento.Items.Add("Crédito");
+            cmbPagamento.Items.Add("Dinheiro");
+            cmbPagamento.Items.Add("Voucher");
+
             button1.Font = new Font("Cambria", 10, FontStyle.Bold);
             button2.Font = new Font("Cambria", 9, FontStyle.Bold);
             button3.Font = new Font("Cambria", 8, FontStyle.Bold);
@@ -73,19 +78,48 @@ namespace tcc
         {
           
         }
-
+       
         private void button1_Click(object sender, EventArgs e)
         {
 
-pagamento pg = new pagamento(txtValor.Text);
+            if (cmbPagamento.SelectedItem.ToString() == "Dinheiro")
+            {
+                pagamento pg = new pagamento(txtValor.Text);
                 pg.Show();
                 this.Close();
-               dataGridProdu.ClearSelection();
-            if (cmbQuantidade.SelectedIndex==0)
-            {
-                
             }
-            
+
+            if (cmbPagamento.SelectedItem.ToString() == "Crédito")
+            {
+                pagamento pg = new pagamento(txtValor.Text);
+                pg.Show();
+                this.Close();
+            }
+
+            if (cmbPagamento.SelectedItem.ToString() == "Débito")
+            {
+                pagamento pg = new pagamento(txtValor.Text);
+                pg.Show();
+                this.Close();
+            }
+
+            if (cmbPagamento.SelectedItem.ToString() == "Voucher")
+            {
+                pagamento pg = new pagamento(txtValor.Text);
+                pg.Show();
+                this.Close();
+            }
+
+            /* pagamento pg = new pagamento(txtValor.Text);
+              pg.Show();
+              this.Close();
+
+             dataGridProdu.ClearSelection();
+          if (cmbQuantidade.SelectedIndex==0)
+          {
+
+          }*/
+
 
         }
 
@@ -443,6 +477,12 @@ pagamento pg = new pagamento(txtValor.Text);
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Exibe a ComboBox para o usuário escolher o método de pagamento
+            cmbPagamento.Visible = true;
         }
 
         private void cmbQuantidade_Click(object sender, EventArgs e)

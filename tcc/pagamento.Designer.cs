@@ -115,6 +115,7 @@ namespace tcc
             this.txtValorEntregue.Name = "txtValorEntregue";
             this.txtValorEntregue.Size = new System.Drawing.Size(100, 20);
             this.txtValorEntregue.TabIndex = 7;
+            this.txtValorEntregue.TextChanged += new System.EventHandler(this.txtValorEntregue_TextChanged);
             this.txtValorEntregue.Enter += new System.EventHandler(this.txtValorEntregue_Enter);
             this.txtValorEntregue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorEntregue_KeyPress);
             // 
@@ -143,6 +144,7 @@ namespace tcc
             this.Controls.Add(this.pictureBox1);
             this.Name = "pagamento";
             this.Text = "pagamento";
+            this.Load += new System.EventHandler(this.pagamento_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
