@@ -21,7 +21,8 @@ namespace tcc
         public int cont = 0;
         public float total1 = 0;
         public float valor1 = 0;
-        public float total2 = 0; 
+        public float total2 = 0;
+        public float subtotalAtual = 0;
         public Form2()
         {
             InitializeComponent();
@@ -76,13 +77,15 @@ namespace tcc
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (cmbQuantidade.SelectedIndex==0)
-            {
-                pagamento pg = new pagamento(txtValor.Text);
+pagamento pg = new pagamento(txtValor.Text);
                 pg.Show();
                 this.Close();
+               dataGridProdu.ClearSelection();
+            if (cmbQuantidade.SelectedIndex==0)
+            {
+                
             }
-            dataGridProdu.ClearSelection();
+            
 
         }
 
@@ -96,7 +99,6 @@ namespace tcc
                 // Verifica se a célula na primeira coluna contém o valor 'codi'
                 if (row.Cells[0].Value.ToString() == codi)
                 {
-                    MessageBox.Show("ENTROU!!!!!!!!!!!!!!!!!");
                     validacao = 1;
 
                     // Obtém o valor do produto atual da célula
@@ -182,23 +184,24 @@ namespace tcc
         private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-                if (e.KeyChar == 13) // Se a tecla pressionada for Enter
-                {
+            if (e.KeyChar == 13) // Se a tecla pressionada for Enter
+            {
                 codi = txtCod.Text;
-                    if (!string.IsNullOrEmpty(txtCod.Text))
-                    {
-                        string codi = txtCod.Text;
-                        bool produtoExistente = false;
+                if (!string.IsNullOrEmpty(txtCod.Text))
+                {
+                    string codi = txtCod.Text;
+                    bool produtoExistente = false;
+                    bool produtoCadastrado = false;
 
-                        // Verificar se o produto já foi adicionado
-                        foreach (DataGridViewRow row in dataGridProdu.Rows)
+                    // Verificar se o produto já foi adicionado
+                    foreach (DataGridViewRow row in dataGridProdu.Rows)
+                    {
+                        if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == codi)
                         {
-                            if (row.Cells[0].Value != null && row.Cells[0].Value.ToString() == codi)
-                            {
-                                produtoExistente = true;
-                                break;
-                            }
+                            produtoExistente = true;
+                            break;
                         }
+                    }
 
                     if (!produtoExistente)
                     {
@@ -209,10 +212,11 @@ namespace tcc
                         {
                             if (codi == r["codigo"].ToString())
                             {
+                                produtoCadastrado = true;
                                 valor = r["preco"].ToString();
                                 string nome1 = r["nome"].ToString();
                                 string quantidade = r["quantidade"].ToString();
-                                dataGridProdu.Rows.Add(codi, nome1, valor, quantidade);
+                                dataGridProdu.Rows.Add(codi, nome1, valor, 1);
                                 cmbQuantidade.Items.Clear();
                                 for (int j = 0; j <= int.Parse(quantidade); j++)
                                 {
@@ -221,23 +225,30 @@ namespace tcc
 
                                 cont += 1;
                                 total += float.Parse(valor);
-                                                       break; // Encerrar o loop enquanto encontrou o produto
+                                break; // Encerrar o loop enquanto encontrou o produto
                             }
                         }
 
                         DAO_Conexao.con.Close();
+
+                        // Se o produto não estiver cadastrado, exibir um aviso
+                        if (!produtoCadastrado)
+                        {
+                            MessageBox.Show("Produto não cadastrado!");
+                        }
 
                         // Atualizar o total e limpar o campo de código
                         txtValor.Text = total.ToString();
                         txtCod.Text = "";
                     }
                     else
+                    {
                         MessageBox.Show("Produto já adicionado à tabela!");
-                    
                     }
                 }
+            }
 
-            
+
 
         }
 
@@ -331,19 +342,12 @@ namespace tcc
 }
         private void button5_Click(object sender, EventArgs e)
         {
+            subtotalAtual = 0;
             produtos p2 = new produtos();
 
-            if (dataGridProdu.Rows.Count == 0)
-            {
-                txtValor.Text = "0";
-                MessageBox.Show("Vazio");
-            }
-            else
-            {
                 if (dataGridProdu.SelectedRows.Count > 0)
                 {
                     int codigoSelecionado = int.Parse(dataGridProdu.SelectedRows[0].Cells[0].Value.ToString());
-                    int quantidadeRemover = int.Parse(dataGridProdu.SelectedRows[0].Cells[3].Value.ToString());
 
                     // Consulta o produto selecionado
                     MySqlDataReader r = p2.consultarProduto(codigoSelecionado);
@@ -365,26 +369,19 @@ namespace tcc
                             {
                                 if (int.Parse(dataGridProdu.Rows[i].Cells[0].Value.ToString()) == codigoSelecionado)
                                 {
-                                    int quantidadeAtual = int.Parse(dataGridProdu.Rows[i].Cells[3].Value.ToString());
-                                    if (quantidadeAtual > quantidadeRemover)
-                                    {
-                                        // Se a quantidade atual for maior que a quantidade a ser removida, atualiza a quantidade e subtotal
-                                        dataGridProdu.Rows[i].Cells[3].Value = quantidadeAtual - quantidadeRemover;
-                                        float subtotalAtual = float.Parse(dataGridProdu.Rows[i].Cells[2].Value.ToString()) * (quantidadeAtual - quantidadeRemover);
-                                        dataGridProdu.Rows[i].Cells[2].Value = subtotalAtual.ToString();
-                                    }
-                                    else
-                                    {
-                                        // Caso contrário, remove completamente a linha correspondente
-                                        dataGridProdu.Rows.RemoveAt(i);
-                                    }
+
+
+                                subtotalAtual = float.Parse(dataGridProdu.Rows[i].Cells[2].Value.ToString());
+                                DataGridViewRow selectedRow = dataGridProdu.SelectedRows[0];
+                                dataGridProdu.Rows.Remove(selectedRow);
+                                  
                                     break;
                                 }
                             }
 
                             // Atualiza o valor total subtraindo o valor do produto multiplicado pela quantidade removida
                             total1 = float.Parse(txtValor.Text);
-                            total1 -= valor1 * quantidadeRemover;
+                            total1 -= subtotalAtual;
                             txtValor.Text = total1.ToString();
 
                             // Se a tabela estiver vazia, define o total como 0
@@ -403,7 +400,11 @@ namespace tcc
                 else
                 {
                     MessageBox.Show("Selecione um produto para remover!");
-                }
+            }
+
+            if (dataGridProdu.Rows.Count == 0)
+            {
+                txtValor.Text = "0";
             }
             txtCod.Focus();
         }

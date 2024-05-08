@@ -56,9 +56,10 @@ namespace tcc
             // 
             this.cmbQuantidade.BackColor = System.Drawing.Color.MediumTurquoise;
             this.cmbQuantidade.FormattingEnabled = true;
-            this.cmbQuantidade.Location = new System.Drawing.Point(533, 330);
+            this.cmbQuantidade.Location = new System.Drawing.Point(711, 406);
+            this.cmbQuantidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbQuantidade.Name = "cmbQuantidade";
-            this.cmbQuantidade.Size = new System.Drawing.Size(167, 21);
+            this.cmbQuantidade.Size = new System.Drawing.Size(221, 24);
             this.cmbQuantidade.TabIndex = 8;
             this.cmbQuantidade.Text = "    Quantidade";
             this.cmbQuantidade.SelectedIndexChanged += new System.EventHandler(this.cmbPagamento_SelectedIndexChanged);
@@ -69,9 +70,10 @@ namespace tcc
             // txtCod
             // 
             this.txtCod.BackColor = System.Drawing.Color.MintCream;
-            this.txtCod.Location = new System.Drawing.Point(430, 270);
+            this.txtCod.Location = new System.Drawing.Point(573, 332);
+            this.txtCod.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCod.Name = "txtCod";
-            this.txtCod.Size = new System.Drawing.Size(270, 20);
+            this.txtCod.Size = new System.Drawing.Size(359, 22);
             this.txtCod.TabIndex = 10;
             this.txtCod.Click += new System.EventHandler(this.txtCod_Click);
             this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
@@ -84,9 +86,10 @@ namespace tcc
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label1.Location = new System.Drawing.Point(383, 303);
+            this.label1.Location = new System.Drawing.Point(511, 373);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.Size = new System.Drawing.Size(56, 22);
             this.label1.TabIndex = 11;
             this.label1.Text = "Total:";
             // 
@@ -96,17 +99,19 @@ namespace tcc
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label2.Location = new System.Drawing.Point(372, 271);
+            this.label2.Location = new System.Drawing.Point(496, 334);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 16);
+            this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 12;
             this.label2.Text = "Código:";
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(430, 300);
+            this.txtValor.Location = new System.Drawing.Point(573, 369);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(270, 20);
+            this.txtValor.Size = new System.Drawing.Size(359, 22);
             this.txtValor.TabIndex = 13;
             this.txtValor.Click += new System.EventHandler(this.txtValor_Click);
             this.txtValor.TextChanged += new System.EventHandler(this.txtValor_TextChanged);
@@ -115,9 +120,10 @@ namespace tcc
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.Location = new System.Drawing.Point(374, 410);
+            this.button1.Location = new System.Drawing.Point(499, 505);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 45);
+            this.button1.Size = new System.Drawing.Size(165, 55);
             this.button1.TabIndex = 14;
             this.button1.Text = "Efetuar pagamento";
             this.button1.UseVisualStyleBackColor = false;
@@ -126,9 +132,10 @@ namespace tcc
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.Location = new System.Drawing.Point(554, 415);
+            this.button2.Location = new System.Drawing.Point(739, 511);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 34);
+            this.button2.Size = new System.Drawing.Size(96, 42);
             this.button2.TabIndex = 15;
             this.button2.Text = "Produtos";
             this.button2.UseVisualStyleBackColor = false;
@@ -137,9 +144,10 @@ namespace tcc
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button3.Location = new System.Drawing.Point(632, 415);
+            this.button3.Location = new System.Drawing.Point(843, 511);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 34);
+            this.button3.Size = new System.Drawing.Size(91, 42);
             this.button3.TabIndex = 16;
             this.button3.Text = "Consultar";
             this.button3.UseVisualStyleBackColor = false;
@@ -148,9 +156,10 @@ namespace tcc
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button4.Location = new System.Drawing.Point(384, 342);
+            this.button4.Location = new System.Drawing.Point(512, 421);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(100, 28);
             this.button4.TabIndex = 17;
             this.button4.Text = "Apagar";
             this.button4.UseVisualStyleBackColor = false;
@@ -159,9 +168,10 @@ namespace tcc
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button5.Location = new System.Drawing.Point(384, 371);
+            this.button5.Location = new System.Drawing.Point(512, 457);
+            this.button5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(100, 28);
             this.button5.TabIndex = 18;
             this.button5.Text = "Apagar item";
             this.button5.UseVisualStyleBackColor = false;
@@ -172,9 +182,10 @@ namespace tcc
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox1.BackgroundImage = global::tcc.Properties.Resources.s__3_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 394);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 485);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(95, 86);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -182,18 +193,20 @@ namespace tcc
             // 
             this.pictureBox2.BackgroundImage = global::tcc.Properties.Resources._11;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(-4, -2);
+            this.pictureBox2.Location = new System.Drawing.Point(-5, -2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(757, 489);
+            this.pictureBox2.Size = new System.Drawing.Size(1009, 602);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(623, 371);
+            this.btnComprar.Location = new System.Drawing.Point(831, 457);
+            this.btnComprar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(75, 23);
+            this.btnComprar.Size = new System.Drawing.Size(100, 28);
             this.btnComprar.TabIndex = 19;
             this.btnComprar.Text = "Comprar";
             this.btnComprar.UseVisualStyleBackColor = true;
@@ -211,41 +224,52 @@ namespace tcc
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridProdu.Location = new System.Drawing.Point(384, 22);
+            this.dataGridProdu.Location = new System.Drawing.Point(512, 27);
+            this.dataGridProdu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridProdu.MultiSelect = false;
             this.dataGridProdu.Name = "dataGridProdu";
+            this.dataGridProdu.RowHeadersWidth = 51;
             this.dataGridProdu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridProdu.Size = new System.Drawing.Size(314, 225);
+            this.dataGridProdu.Size = new System.Drawing.Size(419, 277);
             this.dataGridProdu.TabIndex = 21;
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.Frozen = true;
             this.dataGridViewTextBoxColumn1.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 50;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 50;
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.Frozen = true;
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 80;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 80;
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.Frozen = true;
             this.dataGridViewTextBoxColumn3.HeaderText = "Preço";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 65;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 50;
+            this.dataGridViewTextBoxColumn3.Width = 65;
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.Frozen = true;
             this.dataGridViewTextBoxColumn4.HeaderText = "Quantidade";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 90;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 70;
+            this.dataGridViewTextBoxColumn4.Width = 90;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 694);
+            this.ClientSize = new System.Drawing.Size(1713, 854);
             this.Controls.Add(this.dataGridProdu);
             this.Controls.Add(this.btnComprar);
             this.Controls.Add(this.button5);
@@ -260,6 +284,7 @@ namespace tcc
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbQuantidade);
             this.Controls.Add(this.pictureBox2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
