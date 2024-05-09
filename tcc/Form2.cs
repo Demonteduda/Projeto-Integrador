@@ -23,6 +23,7 @@ namespace tcc
         public float valor1 = 0;
         public float total2 = 0;
         public float subtotalAtual = 0;
+
         public Form2()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace tcc
             //initializeFullscreenImage();
             dataGridProdu.ReadOnly = true;
             //dataGridProdu.Rows.Clear();
+           
         }
 
         /* private void initializeFullscreenImage()
@@ -81,34 +83,65 @@ namespace tcc
        
         private void button1_Click(object sender, EventArgs e)
         {
-
-            if (cmbPagamento.SelectedItem.ToString() == "Dinheiro")
+            if (double.TryParse(txtValor.Text, out double valorTextBox))
             {
-                pagamento pg = new pagamento(txtValor.Text);
-                pg.Show();
-                this.Close();
+                // Recupera o valor acumulado das configurações do aplicativo
+                double valorAcumulado = Properties.Settings.Default.ValorAcumulado;
+
+                // Adiciona o valor do TextBox ao valor acumulado
+                valorAcumulado += valorTextBox;
+
+                // Salva o novo valor acumulado nas configurações do aplicativo
+                Properties.Settings.Default.ValorAcumulado = valorAcumulado;
+                Properties.Settings.Default.Save();
+
+                // Exibe o valor acumulado em uma MessageBox
+                MessageBox.Show($"Valor acumulado: {valorAcumulado}");
+
+                fechamento fc = new fechamento(valorAcumulado);
+
+            }
+            else
+            {
+                //voltar ao zero quando for dia seguinte
             }
 
-            if (cmbPagamento.SelectedItem.ToString() == "Crédito")
+
+            if (cmbPagamento.SelectedItem == null)
             {
-                pagamento pg = new pagamento(txtValor.Text);
-                pg.Show();
-                this.Close();
+                MessageBox.Show("Selecione o tipo de pagamento");
+            }
+            else
+            {
+                if (cmbPagamento.SelectedItem.ToString() == "Dinheiro")
+                {
+                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
+                    pg.Show();
+                    this.Close();
+                }
+
+                if (cmbPagamento.SelectedItem.ToString() == "Crédito")
+                {
+                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
+                    pg.Show();
+                    this.Close();
+                }
+
+                if (cmbPagamento.SelectedItem.ToString() == "Débito")
+                {
+                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
+                    pg.Show();
+                    this.Close();
+                }
+
+                if (cmbPagamento.SelectedItem.ToString() == "Voucher")
+                {
+                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
+                    pg.Show();
+                    this.Close();
+                }
             }
 
-            if (cmbPagamento.SelectedItem.ToString() == "Débito")
-            {
-                pagamento pg = new pagamento(txtValor.Text);
-                pg.Show();
-                this.Close();
-            }
-
-            if (cmbPagamento.SelectedItem.ToString() == "Voucher")
-            {
-                pagamento pg = new pagamento(txtValor.Text);
-                pg.Show();
-                this.Close();
-            }
 
             /* pagamento pg = new pagamento(txtValor.Text);
               pg.Show();
@@ -417,7 +450,7 @@ namespace tcc
                             total1 = float.Parse(txtValor.Text);
                             total1 -= subtotalAtual;
                             txtValor.Text = total1.ToString();
-
+                      
                             // Se a tabela estiver vazia, define o total como 0
                             if (dataGridProdu.Rows.Count == 0)
                             {
@@ -452,6 +485,12 @@ namespace tcc
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
+            fechamento fc = new fechamento();
+            fc.Show();
+            this.Hide();
+
+
+
       /*
             if (txtCod != null)
             {

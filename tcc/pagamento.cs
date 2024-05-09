@@ -13,25 +13,48 @@ namespace tcc
     public partial class pagamento : Form
     {
        
-        public pagamento(string valor)
+        public pagamento(string valor, string ComboBox)
         {
             InitializeComponent();
 
+           if(ComboBox == "Débito")
+            {
+                txtTotalPago.Text = valor;
+                txtTroco.Text = "0";
+                txtValorEntregue.Text = valor;
+            }
 
-      
-            txtTotalPago.Text = valor;
+            else if(ComboBox == "Crédito")
+            {
+                txtTotalPago.Text = valor;
+                txtTroco.Text = "0";
+                txtValorEntregue.Text = valor;
+            }
+
+             else if(ComboBox == "Voucher")
+            {
+                txtTotalPago.Text = valor;
+                txtTroco.Text = "0";
+                txtValorEntregue.Text = valor;
+            }
+
+            else if (ComboBox == "Dinheiro")
+            {
+                txtTotalPago.Text = valor;
+            }
+
         }
-
+       
         private void txtTotalPago_TextChanged(object sender, EventArgs e)
         {
-            
-
+           
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             Form2 f2 = new Form2();
             f2.Show();
+            double valorAcumulado = 0;
             this.Close();
         }
 

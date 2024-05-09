@@ -25,5 +25,8 @@ namespace tcc.Properties
                 return defaultInstance;
             }
         }
+
+        public double ValorAcumulado { get; internal set; }
+        public object UltimaDataFechamento { get; internal set; }
     }
 }

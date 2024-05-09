@@ -57,7 +57,7 @@ namespace tcc
             // 
             this.cmbQuantidade.BackColor = System.Drawing.Color.MediumTurquoise;
             this.cmbQuantidade.FormattingEnabled = true;
-            this.cmbQuantidade.Location = new System.Drawing.Point(533, 330);
+            this.cmbQuantidade.Location = new System.Drawing.Point(533, 342);
             this.cmbQuantidade.Name = "cmbQuantidade";
             this.cmbQuantidade.Size = new System.Drawing.Size(167, 21);
             this.cmbQuantidade.TabIndex = 8;
@@ -116,7 +116,7 @@ namespace tcc
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.Location = new System.Drawing.Point(374, 410);
+            this.button1.Location = new System.Drawing.Point(361, 410);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 45);
             this.button1.TabIndex = 14;
@@ -127,9 +127,9 @@ namespace tcc
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.Location = new System.Drawing.Point(554, 415);
+            this.button2.Location = new System.Drawing.Point(561, 410);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(72, 34);
+            this.button2.Size = new System.Drawing.Size(76, 45);
             this.button2.TabIndex = 15;
             this.button2.Text = "Produtos";
             this.button2.UseVisualStyleBackColor = false;
@@ -138,9 +138,9 @@ namespace tcc
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button3.Location = new System.Drawing.Point(632, 415);
+            this.button3.Location = new System.Drawing.Point(643, 410);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(68, 34);
+            this.button3.Size = new System.Drawing.Size(71, 45);
             this.button3.TabIndex = 16;
             this.button3.Text = "Consultar";
             this.button3.UseVisualStyleBackColor = false;
@@ -170,12 +170,13 @@ namespace tcc
             // 
             // btnComprar
             // 
-            this.btnComprar.Location = new System.Drawing.Point(474, 371);
+            this.btnComprar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnComprar.Location = new System.Drawing.Point(491, 410);
             this.btnComprar.Name = "btnComprar";
-            this.btnComprar.Size = new System.Drawing.Size(48, 23);
+            this.btnComprar.Size = new System.Drawing.Size(64, 45);
             this.btnComprar.TabIndex = 19;
-            this.btnComprar.Text = "Comprar";
-            this.btnComprar.UseVisualStyleBackColor = true;
+            this.btnComprar.Text = "Compras";
+            this.btnComprar.UseVisualStyleBackColor = false;
             this.btnComprar.Click += new System.EventHandler(this.btnComprar_Click);
             // 
             // dataGridProdu
