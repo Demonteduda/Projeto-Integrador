@@ -56,9 +56,11 @@ namespace tcc
             return cad;
         }
 
+      
+
         public int verificaCadastro(int codi)
         {
-           int cont = 0;
+            int cont = 0;
 
             try
             {
@@ -82,14 +84,14 @@ namespace tcc
 
         public MySqlDataReader atualizarProduto(int cod2, string nome2, float preco2, int qtd2)
         {
-            MySqlDataReader atu= null;
+            MySqlDataReader atu = null;
 
             try
             {
-       
+
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("update SyProduto set nome ='"+nome2+"',preco='"+preco2+"',quantidade ='"+qtd2+"' where codigo ='"+cod2+"'", DAO_Conexao.con);
-               insere.ExecuteReader();
+                MySqlCommand insere = new MySqlCommand("update SyProduto set nome ='" + nome2 + "',preco='" + preco2 + "',quantidade ='" + qtd2 + "' where codigo ='" + cod2 + "'", DAO_Conexao.con);
+                insere.ExecuteReader();
             }
 
             catch (Exception ex1)
@@ -129,7 +131,7 @@ namespace tcc
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand retirarEstoque = new MySqlCommand("update SyProduto set quantidade= quantidade - '"+qtd1+"'  where codigo ='" + cod + "'", DAO_Conexao.con);
+                MySqlCommand retirarEstoque = new MySqlCommand("update SyProduto set quantidade= quantidade - '" + qtd1 + "'  where codigo ='" + cod + "'", DAO_Conexao.con);
                 Console.WriteLine("update SyProduto set quantidade = quantidade - '" + qtd1 + "'  where codigo = '" + cod + "'");
                 retirarEstoque.ExecuteNonQuery();
                 compra = true;
@@ -164,3 +166,4 @@ namespace tcc
 
     }
 }
+

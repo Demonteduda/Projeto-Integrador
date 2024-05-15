@@ -12,18 +12,18 @@ namespace tcc
 {
     public partial class fechamento : Form
     {
-        public fechamento(double valor)
-        {
-            InitializeComponent();
-
-            txtVendas.Text = valor.ToString();
-
-        }
-
-
+        public double valor1;
         public fechamento()
         {
             InitializeComponent();
+
+        }
+
+        public fechamento(double valor)
+        {
+            InitializeComponent();
+            valor1 = valor;
+            txtVendas.Text = valor1.ToString();
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -39,12 +39,12 @@ namespace tcc
 
         private void txtVendas_TextChanged(object sender, EventArgs e)
         {
-
+          
         }
 
         private void fechamento_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

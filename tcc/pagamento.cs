@@ -54,7 +54,6 @@ namespace tcc
         {
             Form2 f2 = new Form2();
             f2.Show();
-            double valorAcumulado = 0;
             this.Close();
         }
 
