@@ -39,6 +39,7 @@ namespace tcc
             this.txtTotalPago = new System.Windows.Forms.TextBox();
             this.txtValorEntregue = new System.Windows.Forms.TextBox();
             this.txtTroco = new System.Windows.Forms.TextBox();
+            this.lblCodigoProduto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,11 +129,24 @@ namespace tcc
             this.txtTroco.Click += new System.EventHandler(this.txtTroco_Click);
             this.txtTroco.TextChanged += new System.EventHandler(this.txtTroco_TextChanged);
             // 
+            // lblCodigoProduto
+            // 
+            this.lblCodigoProduto.AutoSize = true;
+            this.lblCodigoProduto.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCodigoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCodigoProduto.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCodigoProduto.Location = new System.Drawing.Point(319, 54);
+            this.lblCodigoProduto.Name = "lblCodigoProduto";
+            this.lblCodigoProduto.Size = new System.Drawing.Size(165, 22);
+            this.lblCodigoProduto.TabIndex = 10;
+            this.lblCodigoProduto.Text = "Còdigo da Compra:";
+            // 
             // pagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblCodigoProduto);
             this.Controls.Add(this.txtTroco);
             this.Controls.Add(this.txtValorEntregue);
             this.Controls.Add(this.txtTotalPago);
@@ -162,5 +176,6 @@ namespace tcc
         private System.Windows.Forms.TextBox txtTotalPago;
         private System.Windows.Forms.TextBox txtValorEntregue;
         private System.Windows.Forms.TextBox txtTroco;
+        private System.Windows.Forms.Label lblCodigoProduto;
     }
 }

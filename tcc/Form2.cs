@@ -123,7 +123,7 @@ namespace tcc
                 
               
                 // Exibe o valor acumulado em uma MessageBox
-                MessageBox.Show($"Valor acumulado: {valorAcumulado}");
+                //MessageBox.Show($"Valor acumulado: {valorAcumulado}");
 
             }
 

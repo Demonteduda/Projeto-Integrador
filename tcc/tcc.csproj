@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Compras.cs" />
     <Compile Include="DAO_Conexao.cs" />
     <Compile Include="fechamento.cs">
       <SubType>Form</SubType>
