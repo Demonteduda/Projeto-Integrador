@@ -18,15 +18,29 @@ namespace tcc
         double valor1;
         String hojedia;
         string numCompra;
+        double troco = 0;
         public pagamento(string valor, string metodocompra)
         {
             InitializeComponent();
 
+            //deixando as texts indisponíveis para alteração, para não ocorrer erros nos valores das vendas
+            txtTotalPago.Enabled = false;
+            txtTroco.Enabled = false;
             //pegando a data do dia atual e atribuindo a variavel 'diahoje'
             DateTime hoje1 = DateTime.Today;
             String diahoje = hoje1.Day.ToString();
             String meshoje = hoje1.Month.ToString();
             String anoatual = hoje1.Year.ToString();
+
+            //se dia ou mes forem menores que 10, um caractere 0 é adicionado para formar um padrao de dois caracteres numerais
+            if (int.Parse(diahoje) < 10)
+            {
+                diahoje = "0" + diahoje;
+            }
+            if (int.Parse(meshoje) < 10)
+            {
+                meshoje = "0" + meshoje;
+            }
             hojedia = $"{diahoje}{meshoje}{anoatual}";
 
 
@@ -91,8 +105,9 @@ namespace tcc
             {
                 if (double.Parse(txtValorEntregue.Text) >= valor1)
                 {
-                    txtTroco.Text = (valor1 - double.Parse(txtValorEntregue.Text)).ToString();
-
+                    troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
+                    Compras compra2 = new Compras(metodopagamento, Int64.Parse(numCompra), valor1);
+                    compra2.EfetuarCompraDinheiro(troco); ;
 
                 }
                 else
@@ -113,15 +128,13 @@ namespace tcc
 
         private void txtValorEntregue_Enter(object sender, EventArgs e)
         {
-
+          
         }
-
+       
         private void txtTroco_Click(object sender, EventArgs e)
         {
-            /*double troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
-            txtTroco.Text = ("R$"+troco);*/
+           
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -136,7 +149,7 @@ namespace tcc
         {
             if (e.KeyChar == 13)
             {
-                double troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
+                troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
                 txtTroco.Text = ("R$" + troco);
             }
 

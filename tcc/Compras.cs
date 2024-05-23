@@ -63,7 +63,7 @@ namespace tcc
             try
             {
                 DAO_Conexao.con.Open();
-                MySqlCommand insere = new MySqlCommand("INSERT INTO SyCompras (Codigo, Valor, FormaPagamento, TrocoDado, Data) VALUES (@codigo, @valor, @formapagamento, @troco, @datahoje)", DAO_Conexao.con);
+                MySqlCommand insere = new MySqlCommand("INSERT INTO SyComprasDinheiro (Codigo, Valor, FormaPagamento, TrocoDado, Data) VALUES (@codigo, @valor, @formapagamento, @troco, @datahoje)", DAO_Conexao.con);
                 insere.Parameters.AddWithValue("@codigo", codigo);
                 insere.Parameters.AddWithValue("@valor", valor);
                 insere.Parameters.AddWithValue("@formapagamento", formapagamento);
@@ -82,6 +82,46 @@ namespace tcc
             }
 
             return compra;
+        }
+
+        public MySqlDataReader totalvendidoDinheiro()
+        {
+            MySqlDataReader totaldia = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand retornavalor = new MySqlCommand("SELECT * FROM SyComprasDinheiro WHERE Data = @datahoje", DAO_Conexao.con);
+                retornavalor.Parameters.AddWithValue("@datahoje", datahoje);
+                totaldia = retornavalor.ExecuteReader();
+            }
+            catch (Exception ex1)
+            {
+                Console.WriteLine(ex1.ToString());
+            }
+
+            return totaldia;
+        }
+
+
+        public MySqlDataReader totalvendido()
+        {
+            MySqlDataReader totaldia = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand retornavalor = new MySqlCommand("SELECT * FROM SyCompras WHERE Data = @datahoje", DAO_Conexao.con);
+                retornavalor.Parameters.AddWithValue("@datahoje", datahoje);
+                totaldia = retornavalor.ExecuteReader();
+            }
+            catch(Exception ex1)
+            {
+                Console.WriteLine(ex1.ToString());
+            }
+        
+
+            return totaldia;
         }
 
         public int verificaNumeroCompra(Int64 numpedido)

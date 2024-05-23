@@ -211,31 +211,6 @@ namespace tcc
             txtCod.Focus();
         }
 
-        /*private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            int validacao = 0;   
-            for(int i=0;i<dataGridProdu.RowCount;i++)
-            {
-                if (dataGridProdu.Rows[i].Cells[0].Value.ToString() == codi)
-                {
-                    validacao = 1;
-                    float tot = float.Parse(valor) * cmbQuantidade.SelectedIndex;
-                    float tot1 = tot + float.Parse(txtValor.Text) - float.Parse(valor)* int.Parse(dataGridProdu.Rows[i].Cells[3].Value.ToString()) ;
-                    total = tot1;
-                    dataGridProdu.Rows[i].Cells[2].Value = tot.ToString();
-                    txtValor.Text = tot1.ToString();
-                    dataGridProdu.Rows[i].Cells[3].Value = cmbQuantidade.SelectedIndex;
-                }
-
-            }
-             if(validacao==0)
-                {
-                    MessageBox.Show("Erro!!");
-                }
-            txtCod.Focus();
-        }*/
-
         private void txtCod_TextChanged(object sender, EventArgs e)
         {
         }
@@ -314,9 +289,9 @@ namespace tcc
                                 }
 
                                 total += float.Parse(valor);
+                              
                                 break; // Encerrar o loop enquanto encontrou o produto
                             }
-
                         }
                         if (produtocadastrado == false)
                         {

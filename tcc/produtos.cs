@@ -147,6 +147,7 @@ namespace tcc
         public MySqlDataReader consultarProduto(int cod)
         {
             MySqlDataReader consul = null;
+            DAO_Conexao.con.Close();
 
             try
             {
@@ -159,7 +160,7 @@ namespace tcc
             {
                 Console.WriteLine(ex.ToString());
             }
-
+            
             return consul;
         }
 
