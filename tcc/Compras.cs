@@ -40,6 +40,7 @@ namespace tcc
                 insere.Parameters.AddWithValue("@formapagamento", formapagamento);
                 insere.Parameters.AddWithValue("@datahoje", datahoje);
                 compra = insere.ExecuteReader();
+                
             }
 
             catch (Exception ex)
@@ -54,6 +55,32 @@ namespace tcc
             return compra;
         }
 
+        public MySqlDataReader fechamentododia(double lucro, double total, double troco)
+        {
+            MySqlDataReader dadosdodia = null;
+            DAO_Conexao.con.Close();
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand comando = new MySqlCommand("INSERT INTO SyFechamento (ValorLucro, Data, ValorTotal, ValorTroco) VALUES (@lucro, @datahoje, @total, @troco)", DAO_Conexao.con);
+                comando.Parameters.AddWithValue("@lucro", lucro);
+                comando.Parameters.AddWithValue("@datahoje", datahoje);
+                comando.Parameters.AddWithValue("@total", total);
+                comando.Parameters.AddWithValue("@troco", troco);
+                dadosdodia = comando.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return dadosdodia;
+        }
 
         public MySqlDataReader EfetuarCompraDinheiro(double troco)
         {
@@ -107,6 +134,7 @@ namespace tcc
         public MySqlDataReader totalvendido()
         {
             MySqlDataReader totaldia = null;
+            DAO_Conexao.con.Close();
 
             try
             {
@@ -122,6 +150,53 @@ namespace tcc
         
 
             return totaldia;
+        }
+
+        public MySqlDataReader excluiFechamento()
+        {
+            MySqlDataReader excluir = null;
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand deletaFecha= new MySqlCommand("DELETE FROM SyCompras WHERE Data = @datahoje", DAO_Conexao.con);
+                deletaFecha.Parameters.AddWithValue("@datahoje", datahoje);
+                excluir = deletaFecha.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return excluir;
+
+        }
+
+        public int verificaFechamento()
+        {
+            int numFechamentos = 0;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand verificaFecha = new MySqlCommand("SELECT Count(*) FROM SyFechamento WHERE Data = @datahoje", DAO_Conexao.con);
+                verificaFecha.Parameters.AddWithValue("@datahoje", datahoje);
+                numFechamentos = Convert.ToInt32(verificaFecha.ExecuteScalar());
+                Console.WriteLine("aaaaaaaaaaaaaaaa"+numFechamentos.ToString());
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return numFechamentos;
         }
 
         public int verificaNumeroCompra(Int64 numpedido)

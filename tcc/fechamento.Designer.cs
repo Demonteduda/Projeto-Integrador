@@ -33,12 +33,12 @@ namespace tcc
             this.txtVendas = new System.Windows.Forms.TextBox();
             this.lblDiaHoje = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.lblTroco = new System.Windows.Forms.Label();
-            this.txtTroco = new System.Windows.Forms.TextBox();
-            this.lblLucro = new System.Windows.Forms.Label();
             this.txtLucro = new System.Windows.Forms.TextBox();
+            this.lblLucro = new System.Windows.Forms.Label();
+            this.txtTroco = new System.Windows.Forms.TextBox();
+            this.lblTroco = new System.Windows.Forms.Label();
             this.btnFecharodia = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,35 +91,13 @@ namespace tcc
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vendas do Dia";
             // 
-            // button1
+            // txtLucro
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(478, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 32);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Voltar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lblTroco
-            // 
-            this.lblTroco.AutoSize = true;
-            this.lblTroco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTroco.Location = new System.Drawing.Point(37, 153);
-            this.lblTroco.Name = "lblTroco";
-            this.lblTroco.Size = new System.Drawing.Size(138, 25);
-            this.lblTroco.TabIndex = 5;
-            this.lblTroco.Text = "Troco dado:";
-            // 
-            // txtTroco
-            // 
-            this.txtTroco.Enabled = false;
-            this.txtTroco.Location = new System.Drawing.Point(181, 158);
-            this.txtTroco.Name = "txtTroco";
-            this.txtTroco.Size = new System.Drawing.Size(119, 20);
-            this.txtTroco.TabIndex = 6;
+            this.txtLucro.Enabled = false;
+            this.txtLucro.Location = new System.Drawing.Point(181, 207);
+            this.txtLucro.Name = "txtLucro";
+            this.txtLucro.Size = new System.Drawing.Size(119, 20);
+            this.txtLucro.TabIndex = 8;
             // 
             // lblLucro
             // 
@@ -131,13 +109,23 @@ namespace tcc
             this.lblLucro.TabIndex = 7;
             this.lblLucro.Text = "Lucro do dia:";
             // 
-            // txtLucro
+            // txtTroco
             // 
-            this.txtLucro.Enabled = false;
-            this.txtLucro.Location = new System.Drawing.Point(181, 207);
-            this.txtLucro.Name = "txtLucro";
-            this.txtLucro.Size = new System.Drawing.Size(119, 20);
-            this.txtLucro.TabIndex = 8;
+            this.txtTroco.Enabled = false;
+            this.txtTroco.Location = new System.Drawing.Point(181, 158);
+            this.txtTroco.Name = "txtTroco";
+            this.txtTroco.Size = new System.Drawing.Size(119, 20);
+            this.txtTroco.TabIndex = 6;
+            // 
+            // lblTroco
+            // 
+            this.lblTroco.AutoSize = true;
+            this.lblTroco.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTroco.Location = new System.Drawing.Point(37, 153);
+            this.lblTroco.Name = "lblTroco";
+            this.lblTroco.Size = new System.Drawing.Size(138, 25);
+            this.lblTroco.TabIndex = 5;
+            this.lblTroco.Text = "Troco dado:";
             // 
             // btnFecharodia
             // 
@@ -150,6 +138,19 @@ namespace tcc
             this.btnFecharodia.TabIndex = 4;
             this.btnFecharodia.Text = "Fechar o Dia";
             this.btnFecharodia.UseVisualStyleBackColor = false;
+            this.btnFecharodia.Click += new System.EventHandler(this.btnFecharodia_Click);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(478, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 32);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Voltar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // fechamento
             // 

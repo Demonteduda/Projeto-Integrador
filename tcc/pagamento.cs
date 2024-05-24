@@ -103,27 +103,40 @@ namespace tcc
 
             if (metodopagamento == "Dinheiro")
             {
-                if (double.Parse(txtValorEntregue.Text) >= valor1)
+                if(txtValorEntregue.Text!="")
                 {
+                if (double.Parse(txtValorEntregue.Text) >= valor1)
+                 {
                     troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
                     Compras compra2 = new Compras(metodopagamento, Int64.Parse(numCompra), valor1);
                     compra2.EfetuarCompraDinheiro(troco); ;
+                    Form2 f2 = new Form2();
+                    f2.Show();
+                    this.Close();
 
+                    }
+                else
+                 {
+                    MessageBox.Show("Valor entregue menor do que o valor total da compra!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 }
                 }
                 else
                 {
-                    MessageBox.Show("Valor entregue menor do que o valor total da compra!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Informe o valor pago pelo cliente", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+              
             }
             else
             {
                 Compras compra1 = new Compras(metodopagamento, Int64.Parse(numCompra) , valor1);
-                 compra1.EfetuarCompra();
+                 compra1.EfetuarCompra(); 
+                
+                Form2 f2 = new Form2();
+                f2.Show();
+                this.Close();
             }
 
-            Form2 f2 = new Form2();
-            f2.Show();
-            this.Close();
+           
         }
 
         private void txtValorEntregue_Enter(object sender, EventArgs e)

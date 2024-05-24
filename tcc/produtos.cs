@@ -108,7 +108,7 @@ namespace tcc
         public MySqlDataReader consultarProdutos()
         {
             MySqlDataReader consul = null;
-
+            DAO_Conexao.con.Close();
             try
             {
                 DAO_Conexao.con.Open();

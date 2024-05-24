@@ -90,5 +90,41 @@ namespace tcc
         {
             
         }
+
+        private void btnFecharodia_Click(object sender, EventArgs e)
+        {
+            Compras comprasdia = new Compras();
+            // Se já houver um fechamento nesse mesmo dia exclui o anterior e adiciona o novo
+            int num1 = comprasdia.verificaFechamento();
+            if (num1 > 0)
+            {
+                DialogResult resposta = MessageBox.Show(
+                    "Já existe um fechamento nesse dia! Deseja fazer um novo?",
+                    "Aviso",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information,
+                    MessageBoxDefaultButton.Button2);
+
+                if (resposta == DialogResult.Yes)
+                {
+                    Compras compraex = new Compras();
+                    DAO_Conexao.con.Close();
+                    compraex.excluiFechamento();
+                    compraex.fechamentododia(valorlucro, valordia, valortroco);
+                }
+                else if (resposta == DialogResult.No)
+                {
+                    Form2 form2 = new Form2();
+                    form2.Show();
+                    this.Close();
+                }
+                // Se a resposta não for nem Yes nem No, não faz nada.
+            }
+            else
+            {
+                comprasdia.fechamentododia(valorlucro, valordia, valortroco);
+            }
+
+        }
     }
 }
