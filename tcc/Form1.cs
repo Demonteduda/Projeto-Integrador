@@ -62,17 +62,22 @@ namespace tcc
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-                f2.Show();
-            this.Hide();
+            
 
-                /*Form1 f1 = new Form1();
-                f1.Close();*/
+                Form1 f1 = new Form1();
+                f1.Close();
                 Console.WriteLine("Cadastrado");
-           /* Usuario lg = new Usuario(txtEmail.Text,txtSenha.Text);
+            Usuario lg = new Usuario(txtEmail.Text,txtSenha.Text);
             Console.WriteLine(txtEmail.Text);
             Console.WriteLine(txtSenha.Text);
-            MySqlDataReader re = lg.verificaLogin();
+            if(txtSenha.TextLength<4)
+            {
+                MessageBox.Show("Senha deve conter mais de 3 caracteres!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+             MySqlDataReader re = lg.verificaLogin();
             bool existe = false;
             if (re.Read())
             {
@@ -80,16 +85,21 @@ namespace tcc
             }
             if (existe)
             {
-               
+               Form2 f2 = new Form2();
+                f2.Show();
+            this.Hide();
 
             }
             else
             {
-                MessageBox.Show("Erro!!");
+                MessageBox.Show("Login Ou Senha incorretos!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
+            }
+         
             DAO_Conexao.con.Close();
 
-           */
+           
 
         }
 
