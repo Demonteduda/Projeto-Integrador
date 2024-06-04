@@ -29,105 +29,19 @@ namespace tcc
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pagamento));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.txtTotalPago = new System.Windows.Forms.TextBox();
-            this.txtValorEntregue = new System.Windows.Forms.TextBox();
-            this.txtTroco = new System.Windows.Forms.TextBox();
             this.lblCodigoProduto = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtTroco1 = new System.Windows.Forms.TextBox();
+            this.txtValorEntregue1 = new System.Windows.Forms.TextBox();
+            this.txtTotalPago1 = new System.Windows.Forms.TextBox();
+            this.btnConcluirPagamento = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(109, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(591, 387);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(267, 109);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Finalização do Pagamento";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Location = new System.Drawing.Point(269, 179);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Total:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(269, 220);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Valor entregue:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(269, 262);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Troco:";
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(381, 293);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "Ok";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // txtTotalPago
-            // 
-            this.txtTotalPago.Location = new System.Drawing.Point(323, 176);
-            this.txtTotalPago.Name = "txtTotalPago";
-            this.txtTotalPago.Size = new System.Drawing.Size(100, 20);
-            this.txtTotalPago.TabIndex = 6;
-            this.txtTotalPago.TextChanged += new System.EventHandler(this.txtTotalPago_TextChanged);
-            // 
-            // txtValorEntregue
-            // 
-            this.txtValorEntregue.Location = new System.Drawing.Point(366, 217);
-            this.txtValorEntregue.Name = "txtValorEntregue";
-            this.txtValorEntregue.Size = new System.Drawing.Size(100, 20);
-            this.txtValorEntregue.TabIndex = 7;
-            this.txtValorEntregue.TextChanged += new System.EventHandler(this.txtValorEntregue_TextChanged);
-            this.txtValorEntregue.Enter += new System.EventHandler(this.txtValorEntregue_Enter);
-            this.txtValorEntregue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorEntregue_KeyPress);
-            // 
-            // txtTroco
-            // 
-            this.txtTroco.Location = new System.Drawing.Point(323, 259);
-            this.txtTroco.Name = "txtTroco";
-            this.txtTroco.Size = new System.Drawing.Size(100, 20);
-            this.txtTroco.TabIndex = 8;
-            this.txtTroco.Click += new System.EventHandler(this.txtTroco_Click);
-            this.txtTroco.TextChanged += new System.EventHandler(this.txtTroco_TextChanged);
             // 
             // lblCodigoProduto
             // 
@@ -135,31 +49,140 @@ namespace tcc
             this.lblCodigoProduto.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblCodigoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigoProduto.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCodigoProduto.Location = new System.Drawing.Point(319, 54);
+            this.lblCodigoProduto.Location = new System.Drawing.Point(79, 19);
             this.lblCodigoProduto.Name = "lblCodigoProduto";
             this.lblCodigoProduto.Size = new System.Drawing.Size(165, 22);
-            this.lblCodigoProduto.TabIndex = 10;
+            this.lblCodigoProduto.TabIndex = 20;
             this.lblCodigoProduto.Text = "Còdigo da Compra:";
+            this.lblCodigoProduto.Click += new System.EventHandler(this.lblCodigoProduto_Click);
+            // 
+            // txtTroco1
+            // 
+            this.txtTroco1.Location = new System.Drawing.Point(171, 183);
+            this.txtTroco1.Name = "txtTroco1";
+            this.txtTroco1.Size = new System.Drawing.Size(178, 20);
+            this.txtTroco1.TabIndex = 19;
+            // 
+            // txtValorEntregue1
+            // 
+            this.txtValorEntregue1.Location = new System.Drawing.Point(171, 146);
+            this.txtValorEntregue1.Name = "txtValorEntregue1";
+            this.txtValorEntregue1.Size = new System.Drawing.Size(178, 20);
+            this.txtValorEntregue1.TabIndex = 18;
+            this.txtValorEntregue1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorEntregue1_KeyPress);
+            // 
+            // txtTotalPago1
+            // 
+            this.txtTotalPago1.Location = new System.Drawing.Point(171, 112);
+            this.txtTotalPago1.Name = "txtTotalPago1";
+            this.txtTotalPago1.Size = new System.Drawing.Size(178, 20);
+            this.txtTotalPago1.TabIndex = 17;
+            this.txtTotalPago1.TextChanged += new System.EventHandler(this.txtTotalPago_TextChanged_1);
+            // 
+            // btnConcluirPagamento
+            // 
+            this.btnConcluirPagamento.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnConcluirPagamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnConcluirPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConcluirPagamento.ForeColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConcluirPagamento.Location = new System.Drawing.Point(171, 232);
+            this.btnConcluirPagamento.Name = "btnConcluirPagamento";
+            this.btnConcluirPagamento.Size = new System.Drawing.Size(139, 35);
+            this.btnConcluirPagamento.TabIndex = 16;
+            this.btnConcluirPagamento.Text = "Concluir Pagamento";
+            this.btnConcluirPagamento.UseVisualStyleBackColor = false;
+            this.btnConcluirPagamento.Click += new System.EventHandler(this.btnConcluirPagamento_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(108, 181);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Troco:";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(42, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 20);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Valor entregue:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Location = new System.Drawing.Point(249, 189);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Total:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(97, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(298, 29);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Finalização do Pagamento";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblValorTotal);
+            this.panel1.Controls.Add(this.lblCodigoProduto);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtTotalPago1);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.btnConcluirPagamento);
+            this.panel1.Controls.Add(this.txtTroco1);
+            this.panel1.Controls.Add(this.txtValorEntregue1);
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.panel1.Location = new System.Drawing.Point(191, 107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(491, 299);
+            this.panel1.TabIndex = 21;
+            // 
+            // lblValorTotal
+            // 
+            this.lblValorTotal.AutoSize = true;
+            this.lblValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorTotal.Location = new System.Drawing.Point(70, 110);
+            this.lblValorTotal.Name = "lblValorTotal";
+            this.lblValorTotal.Size = new System.Drawing.Size(95, 20);
+            this.lblValorTotal.TabIndex = 20;
+            this.lblValorTotal.Text = "Valor Total:";
             // 
             // pagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblCodigoProduto);
-            this.Controls.Add(this.txtTroco);
-            this.Controls.Add(this.txtValorEntregue);
-            this.Controls.Add(this.txtTotalPago);
-            this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.BackgroundImage = global::tcc.Properties.Resources.imagepagamentto1;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(885, 516);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
+            this.MaximumSize = new System.Drawing.Size(901, 555);
+            this.MinimumSize = new System.Drawing.Size(901, 555);
             this.Name = "pagamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "pagamento";
             this.Load += new System.EventHandler(this.pagamento_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,15 +190,16 @@ namespace tcc
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.TextBox txtTotalPago;
-        private System.Windows.Forms.TextBox txtValorEntregue;
-        private System.Windows.Forms.TextBox txtTroco;
         private System.Windows.Forms.Label lblCodigoProduto;
+        private System.Windows.Forms.TextBox txtTroco1;
+        private System.Windows.Forms.TextBox txtValorEntregue1;
+        private System.Windows.Forms.TextBox txtTotalPago1;
+        private System.Windows.Forms.Button btnConcluirPagamento;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblValorTotal;
     }
 }

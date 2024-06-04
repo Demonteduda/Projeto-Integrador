@@ -56,8 +56,9 @@ namespace tcc
             // cmbQuantidade
             // 
             this.cmbQuantidade.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.cmbQuantidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbQuantidade.FormattingEnabled = true;
-            this.cmbQuantidade.Location = new System.Drawing.Point(533, 342);
+            this.cmbQuantidade.Location = new System.Drawing.Point(607, 344);
             this.cmbQuantidade.Name = "cmbQuantidade";
             this.cmbQuantidade.Size = new System.Drawing.Size(167, 21);
             this.cmbQuantidade.TabIndex = 8;
@@ -70,7 +71,7 @@ namespace tcc
             // txtCod
             // 
             this.txtCod.BackColor = System.Drawing.Color.MintCream;
-            this.txtCod.Location = new System.Drawing.Point(430, 270);
+            this.txtCod.Location = new System.Drawing.Point(519, 274);
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(270, 20);
             this.txtCod.TabIndex = 10;
@@ -85,7 +86,7 @@ namespace tcc
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label1.Location = new System.Drawing.Point(383, 303);
+            this.label1.Location = new System.Drawing.Point(465, 306);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 17);
             this.label1.TabIndex = 11;
@@ -97,7 +98,7 @@ namespace tcc
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.label2.Location = new System.Drawing.Point(372, 271);
+            this.label2.Location = new System.Drawing.Point(454, 275);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 16);
             this.label2.TabIndex = 12;
@@ -105,7 +106,7 @@ namespace tcc
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(430, 300);
+            this.txtValor.Location = new System.Drawing.Point(519, 306);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(270, 20);
             this.txtValor.TabIndex = 13;
@@ -116,7 +117,8 @@ namespace tcc
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button1.Location = new System.Drawing.Point(361, 410);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(440, 422);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 45);
             this.button1.TabIndex = 14;
@@ -127,7 +129,8 @@ namespace tcc
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button2.Location = new System.Drawing.Point(561, 410);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(661, 422);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(76, 45);
             this.button2.TabIndex = 15;
@@ -138,7 +141,8 @@ namespace tcc
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button3.Location = new System.Drawing.Point(643, 410);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(753, 422);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(71, 45);
             this.button3.TabIndex = 16;
@@ -149,9 +153,10 @@ namespace tcc
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button4.Location = new System.Drawing.Point(384, 342);
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(440, 342);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(85, 23);
             this.button4.TabIndex = 17;
             this.button4.Text = "Apagar";
             this.button4.UseVisualStyleBackColor = false;
@@ -160,9 +165,10 @@ namespace tcc
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.button5.Location = new System.Drawing.Point(384, 371);
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(440, 371);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.Size = new System.Drawing.Size(85, 23);
             this.button5.TabIndex = 18;
             this.button5.Text = "Apagar item";
             this.button5.UseVisualStyleBackColor = false;
@@ -171,7 +177,8 @@ namespace tcc
             // btnComprar
             // 
             this.btnComprar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnComprar.Location = new System.Drawing.Point(491, 410);
+            this.btnComprar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnComprar.Location = new System.Drawing.Point(582, 422);
             this.btnComprar.Name = "btnComprar";
             this.btnComprar.Size = new System.Drawing.Size(64, 45);
             this.btnComprar.TabIndex = 19;
@@ -191,37 +198,37 @@ namespace tcc
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            this.dataGridProdu.Location = new System.Drawing.Point(384, 22);
+            this.dataGridProdu.Location = new System.Drawing.Point(440, 25);
             this.dataGridProdu.MultiSelect = false;
             this.dataGridProdu.Name = "dataGridProdu";
             this.dataGridProdu.RowHeadersWidth = 51;
             this.dataGridProdu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridProdu.Size = new System.Drawing.Size(314, 225);
+            this.dataGridProdu.Size = new System.Drawing.Size(384, 229);
             this.dataGridProdu.TabIndex = 21;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.Frozen = true;
             this.dataGridViewTextBoxColumn1.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 50;
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 60;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 50;
+            this.dataGridViewTextBoxColumn1.Width = 60;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.Frozen = true;
             this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 80;
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 115;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 80;
+            this.dataGridViewTextBoxColumn2.Width = 115;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.Frozen = true;
             this.dataGridViewTextBoxColumn3.HeaderText = "Preço";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 65;
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 68;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 65;
+            this.dataGridViewTextBoxColumn3.Width = 68;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -234,8 +241,9 @@ namespace tcc
             // cmbPagamento
             // 
             this.cmbPagamento.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.cmbPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbPagamento.FormattingEnabled = true;
-            this.cmbPagamento.Location = new System.Drawing.Point(533, 371);
+            this.cmbPagamento.Location = new System.Drawing.Point(607, 373);
             this.cmbPagamento.Name = "cmbPagamento";
             this.cmbPagamento.Size = new System.Drawing.Size(167, 21);
             this.cmbPagamento.TabIndex = 22;
@@ -247,9 +255,9 @@ namespace tcc
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.pictureBox1.BackgroundImage = global::tcc.Properties.Resources.s__3_;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 394);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 422);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(71, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(86, 95);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
@@ -258,8 +266,10 @@ namespace tcc
             this.pictureBox2.BackgroundImage = global::tcc.Properties.Resources._11;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(-4, -2);
+            this.pictureBox2.MaximumSize = new System.Drawing.Size(850, 530);
+            this.pictureBox2.MinimumSize = new System.Drawing.Size(850, 530);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(757, 489);
+            this.pictureBox2.Size = new System.Drawing.Size(850, 530);
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click_1);
@@ -268,7 +278,7 @@ namespace tcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1285, 694);
+            this.ClientSize = new System.Drawing.Size(844, 521);
             this.Controls.Add(this.cmbPagamento);
             this.Controls.Add(this.dataGridProdu);
             this.Controls.Add(this.btnComprar);
@@ -284,7 +294,10 @@ namespace tcc
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cmbQuantidade);
             this.Controls.Add(this.pictureBox2);
+            this.MaximumSize = new System.Drawing.Size(860, 560);
+            this.MinimumSize = new System.Drawing.Size(860, 560);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridProdu)).EndInit();
@@ -310,10 +323,10 @@ namespace tcc
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnComprar;
         private System.Windows.Forms.DataGridView dataGridProdu;
+        private System.Windows.Forms.ComboBox cmbPagamento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.ComboBox cmbPagamento;
     }
 }

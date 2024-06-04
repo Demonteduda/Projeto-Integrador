@@ -74,6 +74,7 @@ namespace tcc
             // btnCadastrar
             // 
             this.btnCadastrar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.Location = new System.Drawing.Point(283, 406);
             this.btnCadastrar.Name = "btnCadastrar";
@@ -86,6 +87,7 @@ namespace tcc
             // btnConsultar
             // 
             this.btnConsultar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.Location = new System.Drawing.Point(425, 406);
             this.btnConsultar.Name = "btnConsultar";
@@ -98,6 +100,7 @@ namespace tcc
             // btnAtualizar
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtualizar.Location = new System.Drawing.Point(569, 406);
             this.btnAtualizar.Name = "btnAtualizar";
@@ -110,6 +113,7 @@ namespace tcc
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Location = new System.Drawing.Point(713, 406);
             this.btnSair.Name = "btnSair";
@@ -135,7 +139,10 @@ namespace tcc
             this.Controls.Add(this.txtdescricao);
             this.Controls.Add(this.txtCodigo);
             this.DoubleBuffered = true;
+            this.MaximumSize = new System.Drawing.Size(882, 527);
+            this.MinimumSize = new System.Drawing.Size(882, 527);
             this.Name = "cadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "cadastro";
             this.Load += new System.EventHandler(this.cadastro_Load);
             this.ResumeLayout(false);

@@ -46,9 +46,12 @@ namespace tcc
             this.name,
             this.Preço,
             this.Quanti});
-            this.dataGridView1.Location = new System.Drawing.Point(32, 78);
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.Location = new System.Drawing.Point(116, 100);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(736, 441);
+            this.dataGridView1.MinimumSize = new System.Drawing.Size(736, 441);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(740, 395);
+            this.dataGridView1.Size = new System.Drawing.Size(736, 441);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -82,10 +85,11 @@ namespace tcc
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::tcc.Properties.Resources._13;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(793, 497);
+            this.ClientSize = new System.Drawing.Size(996, 592);
             this.Controls.Add(this.dataGridView1);
             this.DoubleBuffered = true;
             this.Name = "consulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "consulta";
             this.Load += new System.EventHandler(this.consulta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

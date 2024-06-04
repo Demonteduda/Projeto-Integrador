@@ -53,7 +53,6 @@ namespace tcc
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            panel1.BackColor = Color.White;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

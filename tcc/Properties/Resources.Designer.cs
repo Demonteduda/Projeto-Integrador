@@ -103,6 +103,26 @@ namespace tcc.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imagepagamentto {
+            get {
+                object obj = ResourceManager.GetObject("imagepagamentto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imagepagamentto1 {
+            get {
+                object obj = ResourceManager.GetObject("imagepagamentto1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap s {
             get {
                 object obj = ResourceManager.GetObject("s", resourceCulture);

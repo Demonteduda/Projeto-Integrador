@@ -24,8 +24,8 @@ namespace tcc
             InitializeComponent();
 
             //deixando as texts indisponíveis para alteração, para não ocorrer erros nos valores das vendas
-            txtTotalPago.Enabled = false;
-            txtTroco.Enabled = false;
+            txtTotalPago1.Enabled = false;
+            txtTroco1.Enabled = false;
             //pegando a data do dia atual e atribuindo a variavel 'diahoje'
             DateTime hoje1 = DateTime.Today;
             String diahoje = hoje1.Day.ToString();
@@ -66,28 +66,31 @@ namespace tcc
             lblCodigoProduto.Text = "Número da compra: " + numCompra;
             if (metodocompra == "Débito")
             {
-                txtTotalPago.Text = valor;
-                txtTroco.Text = "0";
-                txtValorEntregue.Text = valor;
+                txtTotalPago1.Text = valor;
+                txtTroco1.Text = "0";
+                txtValorEntregue1.Text = valor;
+                txtValorEntregue1.Enabled = false;
             }
 
             else if (metodocompra == "Crédito")
             {
-                txtTotalPago.Text = valor;
-                txtTroco.Text = "0";
-                txtValorEntregue.Text = valor;
+                txtTotalPago1.Text = valor;
+                txtTroco1.Text = "0";
+                txtValorEntregue1.Text = valor;
+                txtValorEntregue1.Enabled = false;
             }
 
             else if (metodocompra == "Voucher")
             {
-                txtTotalPago.Text = valor;
-                txtTroco.Text = "0";
-                txtValorEntregue.Text = valor;
+                txtTotalPago1.Text = valor;
+                txtTroco1.Text = "0";
+                txtValorEntregue1.Text = valor;
+                txtValorEntregue1.Enabled = false;
             }
 
             else if (metodocompra == "Dinheiro")
             {
-                txtTotalPago.Text = valor;
+                txtTotalPago1.Text = valor;
             }
             metodopagamento = metodocompra;
             valor1 = double.Parse(valor);
@@ -101,41 +104,7 @@ namespace tcc
         private void btnOK_Click(object sender, EventArgs e)
         {
 
-            if (metodopagamento == "Dinheiro")
-            {
-                if(txtValorEntregue.Text!="")
-                {
-                if (double.Parse(txtValorEntregue.Text) >= valor1)
-                 {
-                    troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
-                    Compras compra2 = new Compras(metodopagamento, Int64.Parse(numCompra), valor1);
-                    compra2.EfetuarCompraDinheiro(troco); ;
-                    Form2 f2 = new Form2();
-                    f2.Show();
-                    this.Close();
-
-                    }
-                else
-                 {
-                    MessageBox.Show("Valor entregue menor do que o valor total da compra!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 }
-                }
-                else
-                {
-                    MessageBox.Show("Informe o valor pago pelo cliente", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-              
-            }
-            else
-            {
-                Compras compra1 = new Compras(metodopagamento, Int64.Parse(numCompra) , valor1);
-                 compra1.EfetuarCompra(); 
-                
-                Form2 f2 = new Form2();
-                f2.Show();
-                this.Close();
-            }
-
+           
            
         }
 
@@ -160,11 +129,7 @@ namespace tcc
 
         private void txtValorEntregue_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
-            {
-                troco = double.Parse(txtValorEntregue.Text) - double.Parse(txtTotalPago.Text);
-                txtTroco.Text = ("R$" + troco);
-            }
+            
 
         }
 
@@ -175,7 +140,75 @@ namespace tcc
 
         private void pagamento_Load(object sender, EventArgs e)
         {
-            txtValorEntregue.Focus();
+            txtValorEntregue1.Focus();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTotalPago_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCodigoProduto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtValorEntregue1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                troco = double.Parse(txtValorEntregue1.Text) - double.Parse(txtTotalPago1.Text);
+                txtTroco1.Text = ("R$" + troco);
+            }
+        }
+
+        private void btnConcluirPagamento_Click(object sender, EventArgs e)
+        {
+            if (metodopagamento == "Dinheiro")
+            {
+                if (txtValorEntregue1.Text != "")
+                {
+                    if (double.Parse(txtValorEntregue1.Text) >= valor1)
+                    {
+                        troco = double.Parse(txtValorEntregue1.Text) - double.Parse(txtTotalPago1.Text);
+                        Compras compra2 = new Compras(metodopagamento, Int64.Parse(numCompra), valor1);
+                        compra2.EfetuarCompraDinheiro(troco); ;
+                        Form2 f2 = new Form2();
+                        f2.Show();
+                        this.Close();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Valor entregue menor do que o valor total da compra!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Informe o valor pago pelo cliente", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            else
+            {
+                Compras compra1 = new Compras(metodopagamento, Int64.Parse(numCompra), valor1);
+                compra1.EfetuarCompra();
+
+                Form2 f2 = new Form2();
+                f2.Show();
+                this.Close();
+            }
+
         }
     }
 }
