@@ -46,7 +46,7 @@ namespace tcc
             // 
             this.lbVendas.AutoSize = true;
             this.lbVendas.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVendas.Location = new System.Drawing.Point(74, 107);
+            this.lbVendas.Location = new System.Drawing.Point(84, 136);
             this.lbVendas.Name = "lbVendas";
             this.lbVendas.Size = new System.Drawing.Size(186, 29);
             this.lbVendas.TabIndex = 0;
@@ -55,9 +55,9 @@ namespace tcc
             // txtVendas
             // 
             this.txtVendas.Enabled = false;
-            this.txtVendas.Location = new System.Drawing.Point(266, 117);
+            this.txtVendas.Location = new System.Drawing.Point(293, 145);
             this.txtVendas.Name = "txtVendas";
-            this.txtVendas.Size = new System.Drawing.Size(217, 20);
+            this.txtVendas.Size = new System.Drawing.Size(288, 20);
             this.txtVendas.TabIndex = 1;
             this.txtVendas.TextChanged += new System.EventHandler(this.txtVendas_TextChanged);
             // 
@@ -65,7 +65,7 @@ namespace tcc
             // 
             this.lblDiaHoje.AutoSize = true;
             this.lblDiaHoje.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.55F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaHoje.Location = new System.Drawing.Point(28, 30);
+            this.lblDiaHoje.Location = new System.Drawing.Point(264, 41);
             this.lblDiaHoje.Name = "lblDiaHoje";
             this.lblDiaHoje.Size = new System.Drawing.Size(335, 39);
             this.lblDiaHoje.TabIndex = 2;
@@ -84,9 +84,9 @@ namespace tcc
             this.groupBox1.Controls.Add(this.lbVendas);
             this.groupBox1.Controls.Add(this.txtVendas);
             this.groupBox1.ForeColor = System.Drawing.Color.MediumTurquoise;
-            this.groupBox1.Location = new System.Drawing.Point(33, 32);
+            this.groupBox1.Location = new System.Drawing.Point(149, 68);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(887, 500);
+            this.groupBox1.Size = new System.Drawing.Size(1089, 635);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Vendas do Dia";
@@ -94,16 +94,17 @@ namespace tcc
             // txtLucro
             // 
             this.txtLucro.Enabled = false;
-            this.txtLucro.Location = new System.Drawing.Point(266, 221);
+            this.txtLucro.Location = new System.Drawing.Point(293, 301);
             this.txtLucro.Name = "txtLucro";
-            this.txtLucro.Size = new System.Drawing.Size(217, 20);
+            this.txtLucro.Size = new System.Drawing.Size(288, 20);
             this.txtLucro.TabIndex = 8;
+            this.txtLucro.TextChanged += new System.EventHandler(this.txtLucro_TextChanged);
             // 
             // lblLucro
             // 
             this.lblLucro.AutoSize = true;
             this.lblLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLucro.Location = new System.Drawing.Point(84, 211);
+            this.lblLucro.Location = new System.Drawing.Point(84, 292);
             this.lblLucro.Name = "lblLucro";
             this.lblLucro.Size = new System.Drawing.Size(172, 29);
             this.lblLucro.TabIndex = 7;
@@ -112,16 +113,16 @@ namespace tcc
             // txtTroco
             // 
             this.txtTroco.Enabled = false;
-            this.txtTroco.Location = new System.Drawing.Point(266, 172);
+            this.txtTroco.Location = new System.Drawing.Point(293, 220);
             this.txtTroco.Name = "txtTroco";
-            this.txtTroco.Size = new System.Drawing.Size(217, 20);
+            this.txtTroco.Size = new System.Drawing.Size(288, 20);
             this.txtTroco.TabIndex = 6;
             // 
             // lblTroco
             // 
             this.lblTroco.AutoSize = true;
             this.lblTroco.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTroco.Location = new System.Drawing.Point(98, 162);
+            this.lblTroco.Location = new System.Drawing.Point(84, 211);
             this.lblTroco.Name = "lblTroco";
             this.lblTroco.Size = new System.Drawing.Size(158, 29);
             this.lblTroco.TabIndex = 5;
@@ -133,9 +134,9 @@ namespace tcc
             this.btnFecharodia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFecharodia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFecharodia.ForeColor = System.Drawing.Color.Black;
-            this.btnFecharodia.Location = new System.Drawing.Point(200, 281);
+            this.btnFecharodia.Location = new System.Drawing.Point(202, 372);
             this.btnFecharodia.Name = "btnFecharodia";
-            this.btnFecharodia.Size = new System.Drawing.Size(163, 42);
+            this.btnFecharodia.Size = new System.Drawing.Size(174, 45);
             this.btnFecharodia.TabIndex = 4;
             this.btnFecharodia.Text = "Fechar o Dia";
             this.btnFecharodia.UseVisualStyleBackColor = false;
@@ -160,10 +161,10 @@ namespace tcc
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1025, 581);
+            this.ClientSize = new System.Drawing.Size(1380, 779);
             this.Controls.Add(this.groupBox1);
-            this.MaximumSize = new System.Drawing.Size(1041, 620);
-            this.MinimumSize = new System.Drawing.Size(1041, 620);
+            this.MaximumSize = new System.Drawing.Size(1396, 818);
+            this.MinimumSize = new System.Drawing.Size(1396, 818);
             this.Name = "fechamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fechamento";

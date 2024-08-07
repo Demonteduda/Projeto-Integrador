@@ -141,28 +141,28 @@ namespace tcc
                 {
                     pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
                     pg.Show();
-                    this.Close();
+                    //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Crédito")
                 {
                     pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
                     pg.Show();
-                    this.Close();
+                    //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Débito")
                 {
                     pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
                     pg.Show();
-                    this.Close();
+                    //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Voucher")
                 {
                     pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
                     pg.Show();
-                    this.Close();
+                    //this.Close();
                 }
             }
 

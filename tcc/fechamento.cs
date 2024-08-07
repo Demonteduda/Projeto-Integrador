@@ -126,5 +126,10 @@ namespace tcc
             }
 
         }
+
+        private void txtLucro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

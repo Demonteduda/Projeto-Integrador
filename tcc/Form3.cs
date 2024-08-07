@@ -131,5 +131,10 @@ namespace tcc
         {
 
         }
+
+        private void txtpreco_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
