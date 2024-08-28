@@ -26,6 +26,42 @@ namespace tcc
             this.valor = valor;
         }
 
+        public Compras(Int64 codigo)
+        {
+            this.codigo = codigo;
+        }
+
+        public MySqlDataReader SalvarCompra(string codprod, string quantidade)
+        {
+
+            MySqlDataReader compra = null;
+
+            try
+            {
+                DAO_Conexao.con.Open();
+                MySqlCommand insere = new MySqlCommand("INSERT INTO SyComprasIndividuais (CodigoCompra, Data, CodigoProduto, Quantidade) VALUES (@codicompra, @datahoje, @codiprod, @qtd )", DAO_Conexao.con);
+                insere.Parameters.AddWithValue("@codicompra", codigo);
+                insere.Parameters.AddWithValue("@datahoje", datahoje);
+                insere.Parameters.AddWithValue("@codiprod", codprod);
+                insere.Parameters.AddWithValue("@qtd", quantidade);
+                
+                compra = insere.ExecuteReader();
+
+            }
+
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            finally
+            {
+                DAO_Conexao.con.Close();
+            }
+
+            return compra;
+        }
+
+
         public MySqlDataReader EfetuarCompra()
         {
 

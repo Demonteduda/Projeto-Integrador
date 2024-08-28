@@ -129,7 +129,7 @@ namespace tcc
 
             fechamento ft = new fechamento(valorAcumulado);
 
-
+            
 
             if (cmbPagamento.SelectedItem == null)
             {
@@ -137,30 +137,58 @@ namespace tcc
             }
             else
             {
+
+             List<string> listaCodigo = new List<string>();
+             List<string> listaNome = new List<string>();
+             List<string> listaPreco = new List<string>();
+             List<string> listaQuantidade = new List<string>();
+
+                foreach (DataGridViewRow row in dataGridProdu.Rows)
+                {
+                    if (row.IsNewRow) continue; // Ignora a linha de novo item, se existir
+
+                    // Pega os valores de cada célula e adiciona às respectivas listas(de acordo com o que é)
+                    listaCodigo.Add(row.Cells[0].Value?.ToString() ?? string.Empty);
+                    listaNome.Add(row.Cells[1].Value?.ToString() ?? string.Empty);
+                    listaPreco.Add(row.Cells[2].Value?.ToString() ?? string.Empty);
+                    listaQuantidade.Add(row.Cells[3].Value?.ToString() ?? string.Empty);
+
+                    MostrarDados();
+                    
+                    void MostrarDados()
+                        {
+                            Console.WriteLine("Códigos: " + string.Join(", ", listaCodigo));
+                            Console.WriteLine("Nomes: " + string.Join(", ", listaNome));
+                            Console.WriteLine("Preços: " + string.Join(", ", listaPreco));
+                            Console.WriteLine("Quantidades: " + string.Join(", ", listaQuantidade));
+                        }
+                }
+
+
                 if (cmbPagamento.SelectedItem.ToString() == "Dinheiro")
                 {
-                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
+                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
                     pg.Show();
                     //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Crédito")
                 {
-                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
+                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
                     pg.Show();
                     //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Débito")
                 {
-                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
+                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
                     pg.Show();
                     //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Voucher")
                 {
-                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text);
+                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
                     pg.Show();
                     //this.Close();
                 }
@@ -171,6 +199,7 @@ namespace tcc
 
         }
 
+       
 
         private void cmbPagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
