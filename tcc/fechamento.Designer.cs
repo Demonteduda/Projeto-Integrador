@@ -39,7 +39,15 @@ namespace tcc
             this.lblTroco = new System.Windows.Forms.Label();
             this.btnFecharodia = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnCodigo = new System.Windows.Forms.Button();
+            this.colunaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaFormaPag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbVendas
@@ -57,7 +65,7 @@ namespace tcc
             this.txtVendas.Enabled = false;
             this.txtVendas.Location = new System.Drawing.Point(293, 145);
             this.txtVendas.Name = "txtVendas";
-            this.txtVendas.Size = new System.Drawing.Size(288, 20);
+            this.txtVendas.Size = new System.Drawing.Size(199, 20);
             this.txtVendas.TabIndex = 1;
             this.txtVendas.TextChanged += new System.EventHandler(this.txtVendas_TextChanged);
             // 
@@ -74,6 +82,9 @@ namespace tcc
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCodigo);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.txtLucro);
             this.groupBox1.Controls.Add(this.lblLucro);
             this.groupBox1.Controls.Add(this.txtTroco);
@@ -96,7 +107,7 @@ namespace tcc
             this.txtLucro.Enabled = false;
             this.txtLucro.Location = new System.Drawing.Point(293, 301);
             this.txtLucro.Name = "txtLucro";
-            this.txtLucro.Size = new System.Drawing.Size(288, 20);
+            this.txtLucro.Size = new System.Drawing.Size(199, 20);
             this.txtLucro.TabIndex = 8;
             this.txtLucro.TextChanged += new System.EventHandler(this.txtLucro_TextChanged);
             // 
@@ -115,7 +126,7 @@ namespace tcc
             this.txtTroco.Enabled = false;
             this.txtTroco.Location = new System.Drawing.Point(293, 220);
             this.txtTroco.Name = "txtTroco";
-            this.txtTroco.Size = new System.Drawing.Size(288, 20);
+            this.txtTroco.Size = new System.Drawing.Size(199, 20);
             this.txtTroco.TabIndex = 6;
             // 
             // lblTroco
@@ -148,13 +159,79 @@ namespace tcc
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(722, 436);
+            this.button1.Location = new System.Drawing.Point(923, 521);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(125, 42);
             this.button1.TabIndex = 3;
             this.button1.Text = "Voltar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.MediumTurquoise;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colunaData,
+            this.colunaCod,
+            this.colunaValorTotal,
+            this.colunaFormaPag});
+            this.dataGridView1.GridColor = System.Drawing.Color.Black;
+            this.dataGridView1.Location = new System.Drawing.Point(568, 113);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(452, 267);
+            this.dataGridView1.TabIndex = 9;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(568, 411);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(299, 23);
+            this.dateTimePicker1.TabIndex = 12;
+            // 
+            // btnCodigo
+            // 
+            this.btnCodigo.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnCodigo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCodigo.ForeColor = System.Drawing.Color.Black;
+            this.btnCodigo.Location = new System.Drawing.Point(873, 401);
+            this.btnCodigo.Name = "btnCodigo";
+            this.btnCodigo.Size = new System.Drawing.Size(147, 45);
+            this.btnCodigo.TabIndex = 13;
+            this.btnCodigo.Text = "Escolher Data";
+            this.btnCodigo.UseVisualStyleBackColor = false;
+            this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
+            // 
+            // colunaData
+            // 
+            this.colunaData.Frozen = true;
+            this.colunaData.HeaderText = "Data";
+            this.colunaData.MinimumWidth = 100;
+            this.colunaData.Name = "colunaData";
+            // 
+            // colunaCod
+            // 
+            this.colunaCod.Frozen = true;
+            this.colunaCod.HeaderText = "Código";
+            this.colunaCod.MinimumWidth = 110;
+            this.colunaCod.Name = "colunaCod";
+            this.colunaCod.Width = 110;
+            // 
+            // colunaValorTotal
+            // 
+            this.colunaValorTotal.Frozen = true;
+            this.colunaValorTotal.HeaderText = "Valor Total";
+            this.colunaValorTotal.MinimumWidth = 100;
+            this.colunaValorTotal.Name = "colunaValorTotal";
+            // 
+            // colunaFormaPag
+            // 
+            this.colunaFormaPag.Frozen = true;
+            this.colunaFormaPag.HeaderText = "Forma de Pagamento";
+            this.colunaFormaPag.MinimumWidth = 100;
+            this.colunaFormaPag.Name = "colunaFormaPag";
             // 
             // fechamento
             // 
@@ -171,6 +248,7 @@ namespace tcc
             this.Load += new System.EventHandler(this.fechamento_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,5 +265,12 @@ namespace tcc
         private System.Windows.Forms.TextBox txtLucro;
         private System.Windows.Forms.Label lblLucro;
         private System.Windows.Forms.Button btnFecharodia;
+        private System.Windows.Forms.Button btnCodigo;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaData;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaCod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaValorTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colunaFormaPag;
     }
 }

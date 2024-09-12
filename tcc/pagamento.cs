@@ -210,7 +210,6 @@ namespace tcc
                             string quantidade = listqtd[i];
                             compraA.SalvarCompra(codprod, quantidade);
                         }
-                    
 
                     Form2 f2 = new Form2();
                     f2.Show();

@@ -19,6 +19,7 @@ namespace tcc
         public fechamento()
         {
             InitializeComponent();
+            dataGridView1.AllowUserToResizeColumns = false;
             DateTime diahoje = DateTime.Today;
             String diaatual = diahoje.Day.ToString();
             String mesatual = diahoje.Month.ToString();
@@ -130,6 +131,62 @@ namespace tcc
         private void txtLucro_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCodigo_Click(object sender, EventArgs e)
+        {
+            DateTime dataescolhida = dateTimePicker1.Value;
+            String dia = dataescolhida.Day.ToString();
+            String mes = dataescolhida.Month.ToString();
+            String ano = dataescolhida.Year.ToString();
+
+           
+            if (dataescolhida == null)
+            {
+                MessageBox.Show("Informe uma data para fazer a consulta!");
+            }
+            else
+            {
+                bool dataexistente = false;
+                string codigo;
+                string valortot;
+                string formapagamento;
+                dataGridView1.Rows.Clear();
+
+                //se dia ou mes forem menores que 10, um caractere 0 é adicionado para formar um padrao de dois caracteres numerais
+                if (int.Parse(dia) < 10)
+                {
+                    dia = "0" + dia;
+                }
+                if (int.Parse(mes) < 10)
+                {
+                    mes = "0" + mes;
+                }  
+                string dataesc = $"{dia}/{mes}/{ano}";
+                DateTime dataescolhida1 = dataescolhida.Date;
+
+                Compras c1 = new Compras();
+                MySqlDataReader r1 = c1.consultarComprasData(dataescolhida1);
+                while(r1.Read())
+                {
+
+                  
+                    dataexistente = true;
+                    codigo = r1["Codigo"].ToString();
+                    valortot = r1["Valor"].ToString();
+                    formapagamento = r1["FormaPagamento"].ToString();
+
+                    dataGridView1.Rows.Add(dataesc, codigo, valortot, formapagamento);
+                    dataGridView1.ForeColor = Color.Black;
+                                     
+                }if(dataexistente==false)
+                    {
+                        MessageBox.Show("Não há compras nesse dia!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+            }
+
+           
+           
         }
     }
 }

@@ -38,6 +38,7 @@ namespace tcc
 
             try
             {
+                Console.WriteLine("Entrooooooooou");
                 DAO_Conexao.con.Open();
                 MySqlCommand insere = new MySqlCommand("INSERT INTO SyComprasIndividuais (CodigoCompra, Data, CodigoProduto, Quantidade) VALUES (@codicompra, @datahoje, @codiprod, @qtd )", DAO_Conexao.con);
                 insere.Parameters.AddWithValue("@codicompra", codigo);
@@ -69,6 +70,7 @@ namespace tcc
 
             try
             {
+                Console.WriteLine("entroooooooooouu efetuar compra");
                 DAO_Conexao.con.Open();
                 MySqlCommand insere = new MySqlCommand("INSERT INTO SyCompras (Codigo, Valor, FormaPagamento, Data) VALUES (@codigo, @valor, @formapagamento, @datahoje)", DAO_Conexao.con);
                 insere.Parameters.AddWithValue("@codigo", codigo);
@@ -164,6 +166,28 @@ namespace tcc
             }
 
             return totaldia;
+        }
+
+        public MySqlDataReader consultarComprasData(DateTime dataescolhida)
+        {
+            MySqlDataReader informCompras = null;
+            DAO_Conexao.con.Close();
+
+            try
+            {
+                Console.WriteLine("Entrooooooooooooooooooouuuuuuuu");
+                DAO_Conexao.con.Open();
+                MySqlCommand retornavalor = new MySqlCommand("SELECT * FROM SyCompras WHERE Data = @dataescolhida", DAO_Conexao.con);
+                retornavalor.Parameters.AddWithValue("@dataescolhida", dataescolhida);
+                informCompras = retornavalor.ExecuteReader();
+            }
+            catch (Exception ex1)
+            {
+                Console.WriteLine(ex1.ToString());
+            }
+
+
+            return informCompras;
         }
 
 
