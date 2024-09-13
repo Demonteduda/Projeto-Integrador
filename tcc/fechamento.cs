@@ -151,6 +151,7 @@ namespace tcc
                 string codigo;
                 string valortot;
                 string formapagamento;
+                string troco;
                 dataGridView1.Rows.Clear();
 
                 //se dia ou mes forem menores que 10, um caractere 0 é adicionado para formar um padrao de dois caracteres numerais
@@ -176,10 +177,28 @@ namespace tcc
                     valortot = r1["Valor"].ToString();
                     formapagamento = r1["FormaPagamento"].ToString();
 
-                    dataGridView1.Rows.Add(dataesc, codigo, valortot, formapagamento);
+                    dataGridView1.Rows.Add(dataesc, codigo, valortot, formapagamento, "0");
                     dataGridView1.ForeColor = Color.Black;
                                      
-                }if(dataexistente==false)
+                }
+                MySqlDataReader r2 = c1.consultarComprasDataDinheiro(dataescolhida);
+
+                while (r2.Read())
+                {
+
+
+                    dataexistente = true;
+                    codigo = r2["Codigo"].ToString();
+                    valortot = r2["Valor"].ToString();
+                    formapagamento = r2["FormaPagamento"].ToString();
+                    troco = r2["TrocoDado"].ToString();
+
+                    dataGridView1.Rows.Add(dataesc, codigo, valortot, formapagamento, troco);
+                    dataGridView1.ForeColor = Color.Black;
+
+                }
+
+                if (dataexistente==false)
                     {
                         MessageBox.Show("Não há compras nesse dia!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
