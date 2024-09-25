@@ -48,6 +48,8 @@ namespace tcc
             this.name,
             this.Preço,
             this.Quanti});
+            this.dataGridView1.Enabled = false;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.Location = new System.Drawing.Point(220, 144);
             this.dataGridView1.MinimumSize = new System.Drawing.Size(736, 441);

@@ -135,6 +135,7 @@ namespace tcc
             this.colunaValorTotal,
             this.colunaFormaPag,
             this.colunaTroco});
+            this.dataGridView1.Enabled = false;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(531, 116);
