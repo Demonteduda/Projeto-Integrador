@@ -46,7 +46,7 @@ namespace tcc
             // lblCodigoProduto
             // 
             this.lblCodigoProduto.AutoSize = true;
-            this.lblCodigoProduto.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCodigoProduto.BackColor = System.Drawing.Color.MediumTurquoise;
             this.lblCodigoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigoProduto.ForeColor = System.Drawing.SystemColors.Control;
             this.lblCodigoProduto.Location = new System.Drawing.Point(79, 19);

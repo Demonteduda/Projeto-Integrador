@@ -75,7 +75,7 @@ namespace tcc
             lblCodigoProduto.Text = "Número da compra: " + numCompra;
             if (metodocompra == "Débito")
             {
-                txtTotalPago1.Text = valor;
+                txtTotalPago1.Text = "R$"+valor;
                 txtTroco1.Text = "0";
                 txtValorEntregue1.Text = valor;
                 txtValorEntregue1.Enabled = false;
@@ -83,7 +83,7 @@ namespace tcc
 
             else if (metodocompra == "Crédito")
             {
-                txtTotalPago1.Text = valor;
+                txtTotalPago1.Text = "R$"+valor;
                 txtTroco1.Text = "0";
                 txtValorEntregue1.Text = valor;
                 txtValorEntregue1.Enabled = false;
@@ -91,7 +91,7 @@ namespace tcc
 
             else if (metodocompra == "Voucher")
             {
-                txtTotalPago1.Text = valor;
+                txtTotalPago1.Text = "R$"+valor;
                 txtTroco1.Text = "0";
                 txtValorEntregue1.Text = valor;
                 txtValorEntregue1.Enabled = false;
@@ -99,7 +99,7 @@ namespace tcc
 
             else if (metodocompra == "Dinheiro")
             {
-                txtTotalPago1.Text = valor;
+                txtTotalPago1.Text = "R$"+valor;
             }
             metodopagamento = metodocompra;
             valor1 = double.Parse(valor);
@@ -176,8 +176,17 @@ namespace tcc
         {
             if (e.KeyChar == 13)
             {
-                troco = double.Parse(txtValorEntregue1.Text) - double.Parse(txtTotalPago1.Text);
+                if(double.Parse(txtValorEntregue1.Text)>=valor1)
+                {
+                troco = double.Parse(txtValorEntregue1.Text) - valor1;
                 txtTroco1.Text = ("R$" + troco);
+                }
+                else
+                {
+                    MessageBox.Show("Valor entregue menor do que o valor total da compra!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtValorEntregue1.Text = "";
+                }
+               
             }
         }
 
@@ -189,12 +198,13 @@ namespace tcc
                 {
                     if (double.Parse(txtValorEntregue1.Text) >= valor1)
                     {
-                        troco = double.Parse(txtValorEntregue1.Text) - double.Parse(txtTotalPago1.Text);
+                        troco = double.Parse(txtValorEntregue1.Text) - valor1;
                         Compras compra2 = new Compras(metodopagamento, Int64.Parse(numCompra), valor1);
                         compra2.EfetuarCompraDinheiro(troco);
+
                         //Mostrando dados da compra
-                        MessageBox.Show("Códigos: " + string.Join(", ", listcod) + "\n Nomes: " + string.Join(",", listnome) + "" +
-                        "\n Preços: " + string.Join(", ", listpreco) + "\n Quantidades: " + string.Join(",", listqtd));
+                        /*MessageBox.Show("Códigos: " + string.Join(", ", listcod) + "\n Nomes: " + string.Join(",", listnome) + "" +
+                        "\n Preços: " + string.Join(", ", listpreco) + "\n Quantidades: " + string.Join(",", listqtd));*/
 
                         // Verifica se ambas as listas têm o mesmo número de elementos
                         if (listcod.Count != listqtd.Count)
@@ -247,10 +257,13 @@ namespace tcc
                     string quantidade = listqtd[i];
                     compraA.SalvarCompra(codprod, quantidade);
                 }
-                MessageBox.Show("AAAAAAAAA Códigos: " + string.Join(", ", listcod) + "\n Nomes: " + string.Join(",", listnome) + "" +
-                "\n Preços: " + string.Join(", ", listpreco)+ "\n Quantidades: " + string.Join(",", listqtd) );
+
+
+                /*MessageBox.Show("AAAAAAAAA Códigos: " + string.Join(", ", listcod) + "\n Nomes: " + string.Join(",", listnome) + "" +
+                "\n Preços: " + string.Join(", ", listpreco)+ "\n Quantidades: " + string.Join(",", listqtd) );*/
+
                 Form2 f2 = new Form2();
-        f2.Show();
+                f2.Show();
                 this.Close();
     }
 

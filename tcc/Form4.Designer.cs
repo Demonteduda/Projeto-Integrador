@@ -34,12 +34,14 @@ namespace tcc
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quanti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSair = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
@@ -80,6 +82,19 @@ namespace tcc
             this.Quanti.Name = "Quanti";
             this.Quanti.Width = 150;
             // 
+            // btnSair
+            // 
+            this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(1178, 705);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(160, 52);
+            this.btnSair.TabIndex = 8;
+            this.btnSair.Text = "Voltar";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // consulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -87,6 +102,7 @@ namespace tcc
             this.BackgroundImage = global::tcc.Properties.Resources._13;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1380, 779);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.dataGridView1);
             this.DoubleBuffered = true;
             this.Name = "consulta";
@@ -105,5 +121,6 @@ namespace tcc
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quanti;
+        private System.Windows.Forms.Button btnSair;
     }
 }

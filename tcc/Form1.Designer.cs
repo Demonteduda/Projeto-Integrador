@@ -85,6 +85,7 @@ namespace tcc
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(198, 26);
             this.txtSenha.TabIndex = 12;
+            this.txtSenha.UseSystemPasswordChar = true;
             this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // panel1

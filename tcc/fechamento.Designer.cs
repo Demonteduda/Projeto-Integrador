@@ -36,17 +36,17 @@ namespace tcc
             this.btnCodigo = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.colunaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaFormaPag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colunaTroco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtLucro = new System.Windows.Forms.TextBox();
             this.lblLucro = new System.Windows.Forms.Label();
             this.txtTroco = new System.Windows.Forms.TextBox();
             this.lblTroco = new System.Windows.Forms.Label();
             this.btnFecharodia = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.colunaData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaValorTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaFormaPag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colunaTroco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -135,11 +135,48 @@ namespace tcc
             this.colunaValorTotal,
             this.colunaFormaPag,
             this.colunaTroco});
+            this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.Black;
             this.dataGridView1.Location = new System.Drawing.Point(531, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(510, 267);
             this.dataGridView1.TabIndex = 9;
+            // 
+            // colunaData
+            // 
+            this.colunaData.Frozen = true;
+            this.colunaData.HeaderText = "Data";
+            this.colunaData.MinimumWidth = 70;
+            this.colunaData.Name = "colunaData";
+            this.colunaData.Width = 70;
+            // 
+            // colunaCod
+            // 
+            this.colunaCod.Frozen = true;
+            this.colunaCod.HeaderText = "Código";
+            this.colunaCod.MinimumWidth = 110;
+            this.colunaCod.Name = "colunaCod";
+            this.colunaCod.Width = 110;
+            // 
+            // colunaValorTotal
+            // 
+            this.colunaValorTotal.Frozen = true;
+            this.colunaValorTotal.HeaderText = "Valor Total";
+            this.colunaValorTotal.MinimumWidth = 100;
+            this.colunaValorTotal.Name = "colunaValorTotal";
+            // 
+            // colunaFormaPag
+            // 
+            this.colunaFormaPag.Frozen = true;
+            this.colunaFormaPag.HeaderText = "Forma de Pagamento";
+            this.colunaFormaPag.MinimumWidth = 100;
+            this.colunaFormaPag.Name = "colunaFormaPag";
+            // 
+            // colunaTroco
+            // 
+            this.colunaTroco.Frozen = true;
+            this.colunaTroco.HeaderText = "Troco";
+            this.colunaTroco.Name = "colunaTroco";
             // 
             // txtLucro
             // 
@@ -205,42 +242,6 @@ namespace tcc
             this.button1.Text = "Voltar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // colunaData
-            // 
-            this.colunaData.Frozen = true;
-            this.colunaData.HeaderText = "Data";
-            this.colunaData.MinimumWidth = 70;
-            this.colunaData.Name = "colunaData";
-            this.colunaData.Width = 70;
-            // 
-            // colunaCod
-            // 
-            this.colunaCod.Frozen = true;
-            this.colunaCod.HeaderText = "Código";
-            this.colunaCod.MinimumWidth = 110;
-            this.colunaCod.Name = "colunaCod";
-            this.colunaCod.Width = 110;
-            // 
-            // colunaValorTotal
-            // 
-            this.colunaValorTotal.Frozen = true;
-            this.colunaValorTotal.HeaderText = "Valor Total";
-            this.colunaValorTotal.MinimumWidth = 100;
-            this.colunaValorTotal.Name = "colunaValorTotal";
-            // 
-            // colunaFormaPag
-            // 
-            this.colunaFormaPag.Frozen = true;
-            this.colunaFormaPag.HeaderText = "Forma de Pagamento";
-            this.colunaFormaPag.MinimumWidth = 100;
-            this.colunaFormaPag.Name = "colunaFormaPag";
-            // 
-            // colunaTroco
-            // 
-            this.colunaTroco.Frozen = true;
-            this.colunaTroco.HeaderText = "Troco";
-            this.colunaTroco.Name = "colunaTroco";
             // 
             // fechamento
             // 

@@ -62,9 +62,7 @@ namespace tcc
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
-            this.Hide();
+            
 
             Form1 f1 = new Form1();
                 f1.Close();
@@ -87,9 +85,9 @@ namespace tcc
             }
             if (existe)
             {
-              /* Form2 f2 = new Form2();
+               Form2 f2 = new Form2();
                 f2.Show();
-            this.Hide();*/
+            this.Hide();
 
             }
             else

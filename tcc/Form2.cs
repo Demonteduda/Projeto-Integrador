@@ -153,42 +153,43 @@ namespace tcc
                     listaPreco.Add(row.Cells[2].Value?.ToString() ?? string.Empty);
                     listaQuantidade.Add(row.Cells[3].Value?.ToString() ?? string.Empty);
 
-                    MostrarDados();
+
+                     /*MostrarDados();
                     
-                    void MostrarDados()
+                   void MostrarDados()
                         {
                             Console.WriteLine("Códigos: " + string.Join(", ", listaCodigo));
                             Console.WriteLine("Nomes: " + string.Join(", ", listaNome));
                             Console.WriteLine("Preços: " + string.Join(", ", listaPreco));
                             Console.WriteLine("Quantidades: " + string.Join(", ", listaQuantidade));
-                        }
+                        }*/
                 }
 
 
                 if (cmbPagamento.SelectedItem.ToString() == "Dinheiro")
                 {
-                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
+                    pagamento pg = new pagamento(total.ToString(), cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
                     pg.Show();
                     //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Crédito")
                 {
-                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
+                    pagamento pg = new pagamento(total.ToString(), cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
                     pg.Show();
                     //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Débito")
                 {
-                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
+                    pagamento pg = new pagamento(total.ToString(), cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
                     pg.Show();
                     //this.Close();
                 }
 
                 if (cmbPagamento.SelectedItem.ToString() == "Voucher")
                 {
-                    pagamento pg = new pagamento(txtValor.Text, cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
+                    pagamento pg = new pagamento(total.ToString(), cmbPagamento.Text, listaCodigo, listaNome, listaPreco, listaQuantidade);
                     pg.Show();
                     //this.Close();
                 }
@@ -220,7 +221,7 @@ namespace tcc
 
                     // Calcula o subtotal do produto atual considerando a nova quantidade selecionada
                     float subtotalProduto = valorProduto * cmbQuantidade.SelectedIndex;
-                    // Atualiza as células na grade com os novos valores
+                    // Atualiza as células com os novos valores
                     ultimaLinha.Cells[2].Value = subtotalProduto.ToString();
                     ultimaLinha.Cells[3].Value = cmbQuantidade.SelectedIndex;
                 }
@@ -235,7 +236,7 @@ namespace tcc
                 novoTotal += subtotal;
             }
             total = novoTotal;
-            txtValor.Text = total.ToString();
+            txtValor.Text = "R$"+total.ToString();
 
             txtCod.Focus();
         }
@@ -319,7 +320,7 @@ namespace tcc
 
                                 total += float.Parse(valor);
                               
-                                break; // Encerrar o loop enquanto encontrou o produto
+                                break; // Encerrar o loop enquanto encontrar um produto
                             }
                         }
                         if (produtocadastrado == false)
@@ -370,7 +371,7 @@ namespace tcc
                     }
                     DAO_Conexao.con.Close();
                     // Atualizar o total e limpar o campo de código
-                    txtValor.Text = total.ToString();
+                    txtValor.Text = "R$"+total.ToString();
                     txtCod.Text = "";
                 }
             }
@@ -467,7 +468,7 @@ namespace tcc
                                 DataGridViewRow selectedRow = dataGridProdu.SelectedRows[0];
                                 dataGridProdu.Rows.Remove(selectedRow);
                                 total -= subtotalAtual;
-                                MessageBox.Show(total.ToString());
+                                MessageBox.Show("R$"+total.ToString());
                                 break;
                             }
                         }
@@ -475,7 +476,7 @@ namespace tcc
                         // Atualiza o valor total subtraindo o valor do produto multiplicado pela quantidade removida
 
                         
-                        txtValor.Text = total.ToString();
+                        txtValor.Text = "R$"+total.ToString();
 
                         // Se a tabela estiver vazia, define o total como 0
                         if (dataGridProdu.Rows.Count == 0)

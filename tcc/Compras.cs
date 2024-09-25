@@ -197,7 +197,6 @@ namespace tcc
 
             try
             {
-                Console.WriteLine("Entrooooooooooooooooooouuuuuuuu");
                 DAO_Conexao.con.Open();
                 MySqlCommand retornavalor = new MySqlCommand("SELECT * FROM SyCompras WHERE Data = @dataescolhida", DAO_Conexao.con);
                 retornavalor.Parameters.AddWithValue("@dataescolhida", dataescolhida);
