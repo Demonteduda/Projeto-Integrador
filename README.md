@@ -1,2 +1,4 @@
+Feito por: ***Gonçalo Henrique da Cruz** e **Maria Eduarda Demonte**
 Projeto Final Cotil 2024
-Feito por: Gonçalo Henrique da Cruz e Maria Eduarda Demonte
+
+Sistema de vendas e controle de etoque feito em c#, utilizamos o mysql como banco de dados
